@@ -7,11 +7,6 @@ Gameobject::Gameobject()
     m_parent = (nullptr);
 }
 
-Gameobject::Gameobject(std::string objectName)
-{
-    m_name = objectName;
-    m_parent = (nullptr);
-}
 
 Gameobject::~Gameobject()
 {
@@ -51,13 +46,15 @@ void Gameobject::updateGlobalTransform()
     }
 }
 
-void Gameobject::draw(aie::Renderer2D* renderer)
+void Gameobject::draw(aie::Renderer2D * renderer)
 {
-    for (auto child: m_children)
+    for (auto child : m_children)
     {
         child->draw(renderer);
     }
 }
+
+
 
 void Gameobject::update(float deltaTime)
 {

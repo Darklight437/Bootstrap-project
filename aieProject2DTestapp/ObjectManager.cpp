@@ -33,6 +33,13 @@ void ObjectManager::addnewObj(Gameobject* incomingObj)
     }
 }
 
+Gameobject ObjectManager::buildRootObject()
+{
+    new Gameobject("Root");
+
+    return Gameobject();
+}
+
 //Gameobject * ObjectManager::GetGameObj()
 //{
 //

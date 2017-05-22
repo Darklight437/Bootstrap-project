@@ -18,6 +18,9 @@ public:
     //Gameobject* GetGameObj();
     std::string exePath;
 
+
+    //main object for demo and 2 childeren
+    Gameobject buildRootObject();
 protected:
     std::vector<Gameobject*> objectlist;
 
