@@ -51,4 +51,20 @@ void Gameobject::updateGlobalTransform()
     }
 }
 
+void Gameobject::draw(aie::Renderer2D* renderer)
+{
+    for (auto child: m_children)
+    {
+        child->draw(renderer);
+    }
+}
+
+void Gameobject::update(float deltaTime)
+{
+    for (auto child : m_children)
+    {
+        child->update(deltaTime);
+    }
+}
+
 

@@ -4,7 +4,14 @@ class SpriteObject :
     public Gameobject
 {
 public:
-    SpriteObject();
+    SpriteObject(aie::Texture* texture);
     virtual ~SpriteObject();
+
+    virtual void draw(aie::renderer2D* renderer);
+
+protected:
+    aie::Texture* m_texture;
+
+
 };
 
