@@ -1,6 +1,9 @@
 #pragma once
-#include <vector>
+
 #include "Matrix3.h"
+#include "texture.h"
+
+#include <vector>
 #include <string>
 
 class Gameobject
@@ -13,7 +16,7 @@ public:
     void addChild(Gameobject* child);
 
     void updateGlobalTransform();
-    aie::Texture* m_texture;
+    aie::Texture m_Texture;
 
 
 
