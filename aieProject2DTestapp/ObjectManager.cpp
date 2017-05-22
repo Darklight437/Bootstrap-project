@@ -32,3 +32,9 @@ void ObjectManager::addnewObj(Gameobject* incomingObj)
         objectlist.push_back(incomingObj);
     }
 }
+
+//Gameobject * ObjectManager::GetGameObj()
+//{
+//
+//    return nullptr;
+//}

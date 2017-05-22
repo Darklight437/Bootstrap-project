@@ -10,6 +10,7 @@ Gameobject::Gameobject()
 Gameobject::Gameobject(std::string objectName)
 {
     m_name = objectName;
+    m_parent = (nullptr);
 }
 
 Gameobject::~Gameobject()

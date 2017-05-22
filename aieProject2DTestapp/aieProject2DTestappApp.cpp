@@ -39,12 +39,18 @@ void aieProject2DTestappApp::update(float deltaTime) {
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
+
+
+
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
 }
 
 void aieProject2DTestappApp::draw() {
+    
+    
+
 
 	// wipe the screen to the background colour
     setBackgroundColour(192, 192, 192, 0.7);
@@ -53,29 +59,28 @@ void aieProject2DTestappApp::draw() {
     m_2dRenderer->setCameraPos(0, 0);
 	// begin drawing sprites
 	m_2dRenderer->begin();
-
-
-
-
-
-
-
-
-
 	// draw your stuff here!
 
-    m_2dRenderer->setRenderColour(1, 1, 1, 1);
-    
-    m_2dRenderer->drawSprite(m_texture, 200, 200, 0, 0);
     
 
-    
+        //fun little jojo reference put in draw
+    m_2dRenderer->setRenderColour(1, 1, 1, 1);
+           
+    m_2dRenderer->drawSpriteTransformed3x3(m_texture, );
+
+           
 
     m_2dRenderer->setRenderColour(0, 0, 0, 1);
 
-	// output some text, uses the last used colour
-	m_2dRenderer->drawText(m_font, "F-MEGA", 600, 500);
+        // output some text, uses the last used colour
+    m_2dRenderer->drawText(m_font, "F-MEGA", 600, 500);
 
-	// done drawing sprites
-	m_2dRenderer->end();
+        // done drawing sprites
+
+
+
+
+    m_2dRenderer->end();
+
+ 
 }

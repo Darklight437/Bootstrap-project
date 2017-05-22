@@ -15,7 +15,7 @@ public:
     std::string getExecutableFolder() const;
 
     void addnewObj(Gameobject* incomingObj);
-
+    //Gameobject* GetGameObj();
     std::string exePath;
 
 protected:

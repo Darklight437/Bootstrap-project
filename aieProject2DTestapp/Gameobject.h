@@ -13,7 +13,7 @@ public:
     void addChild(Gameobject* child);
 
     void updateGlobalTransform();
-
+    aie::Texture* m_texture;
 
 
 
