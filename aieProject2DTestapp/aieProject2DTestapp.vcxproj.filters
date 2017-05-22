@@ -42,7 +42,7 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteObject.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

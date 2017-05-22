@@ -67,7 +67,9 @@ void aieProject2DTestappApp::draw() {
     m_2dRenderer->setRenderColour(1, 1, 1, 1);
     
     m_2dRenderer->drawSprite(m_texture, 200, 200, 0, 0);
+    
 
+    
 
     m_2dRenderer->setRenderColour(0, 0, 0, 1);
 

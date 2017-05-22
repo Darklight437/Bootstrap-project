@@ -24,3 +24,8 @@ std::string ObjectManager::getExecutableFolder() const
 
     return buffer;
 }
+
+void ObjectManager::addnewObj(Gameobject*)
+{
+
+}
