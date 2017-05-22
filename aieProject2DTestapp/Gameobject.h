@@ -1,11 +1,12 @@
 #pragma once
-#include"ObjectManager.h"
 #include <vector>
 #include "Matrix3.h"
+#include <string>
 
 class Gameobject
 {
 public:
+    Gameobject(std::string objectName);
     Gameobject();
     virtual ~Gameobject();
 
@@ -22,7 +23,7 @@ protected:
 
     Matrix3 m_globalTransform;
     Matrix3 m_localtransform;
-
+    std::string m_name;
     Gameobject* m_parent;
     std::vector<Gameobject*> m_children;
    

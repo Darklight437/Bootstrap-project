@@ -2,6 +2,7 @@
 #include <string>
 #include <Windows.h>
 #include <vector>
+#include "Gameobject.h"
 
 class ObjectManager
 {
@@ -13,7 +14,7 @@ public:
     //ash's absolute directory code
     std::string getExecutableFolder() const;
 
-    void addnewObj(Gameobject*);
+    void addnewObj(Gameobject* incomingObj);
 
     std::string exePath;
 

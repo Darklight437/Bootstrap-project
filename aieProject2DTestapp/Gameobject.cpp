@@ -7,9 +7,14 @@ Gameobject::Gameobject()
     m_parent = (nullptr);
 }
 
+Gameobject::Gameobject(std::string objectName)
+{
+    m_name = objectName;
+}
 
 Gameobject::~Gameobject()
 {
+
 
     for (auto child :m_children)
     {

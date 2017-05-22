@@ -25,7 +25,10 @@ std::string ObjectManager::getExecutableFolder() const
     return buffer;
 }
 
-void ObjectManager::addnewObj(Gameobject*)
+void ObjectManager::addnewObj(Gameobject* incomingObj)
 {
-
+    if (incomingObj != nullptr)
+    {
+        objectlist.push_back(incomingObj);
+    }
 }
