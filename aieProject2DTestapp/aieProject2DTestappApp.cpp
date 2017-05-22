@@ -66,7 +66,7 @@ void aieProject2DTestappApp::draw() {
         //fun little jojo reference put in draw
     m_2dRenderer->setRenderColour(1, 1, 1, 1);
            
-    m_2dRenderer->drawSpriteTransformed3x3(m_texture, );
+    //m_2dRenderer->drawSpriteTransformed3x3(m_texture, );
 
            
 

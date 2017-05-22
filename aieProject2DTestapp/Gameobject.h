@@ -2,7 +2,6 @@
 
 #include "Matrix3.h"
 #include "texture.h"
-#include "aieProject2DTestappApp.h"
 #include <vector>
 #include <string>
 
@@ -16,7 +15,7 @@ public:
     void addChild(Gameobject* child);
 
     void updateGlobalTransform();
- virtual void draw(aie::Renderer2D* renderer);
+// virtual void draw(aie::Renderer2D* renderer);
  virtual void update(float deltaTime);
     
 
