@@ -101,12 +101,14 @@
     <ClCompile Include="aieProject2DTestappApp.cpp" />
     <ClCompile Include="Gameobject.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ObjectFactory.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="SpriteObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aieProject2DTestappApp.h" />
     <ClInclude Include="Gameobject.h" />
+    <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="SpriteObject.h" />
   </ItemGroup>

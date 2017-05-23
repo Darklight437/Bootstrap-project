@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 
+enum class GOType{spriteobject};
+
 class Gameobject
 {
 public:

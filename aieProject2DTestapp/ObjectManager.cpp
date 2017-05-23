@@ -37,10 +37,10 @@ Gameobject ObjectManager::buildRootObject()
 {
    Gameobject* rootObject = new Gameobject;
    addnewObj(rootObject);
-
+   rootObject->setname("testcar");
    Gameobject* child1 = new Gameobject;
    addnewObj(child1);
-
+   child1->setname("randomball");
    rootObject->addChild(child1);
 
     return Gameobject();
