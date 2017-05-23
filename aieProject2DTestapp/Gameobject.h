@@ -23,7 +23,7 @@ public:
     
  void setname(std::string objectName);
 
-
+ void updateLocalTransform(Matrix3 transformTo);
 
 
 protected:

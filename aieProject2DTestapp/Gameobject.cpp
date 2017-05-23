@@ -69,4 +69,9 @@ void Gameobject::setname(std::string objectName)
     m_name = objectName;
 }
 
+void Gameobject::updateLocalTransform(Matrix3 transformTo)
+{
+    m_localtransform = transformTo;
+}
+
 
