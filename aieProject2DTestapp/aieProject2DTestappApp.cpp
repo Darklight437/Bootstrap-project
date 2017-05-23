@@ -4,11 +4,7 @@
 #include "Input.h"
 
 
-aieProject2DTestappApp::aieProject2DTestappApp() {
-
-
-
-}
+aieProject2DTestappApp::aieProject2DTestappApp() {}
 
 aieProject2DTestappApp::~aieProject2DTestappApp() {
 
@@ -81,7 +77,6 @@ void aieProject2DTestappApp::draw() {
 
   
      // done drawing sprites
-
 
 
     m_2dRenderer->end();

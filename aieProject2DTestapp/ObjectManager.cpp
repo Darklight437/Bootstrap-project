@@ -35,15 +35,14 @@ void ObjectManager::addnewObj(SpriteObject* incomingObj)
 
 void ObjectManager::buildRootObject()
 {
-   Gameobject* rootObject = new SpriteObject;
+   SpriteObject* rootObject = new SpriteObject;
    addnewObj(rootObject);
    rootObject->setname("testcar");
-   Gameobject* child1 = new SpriteObject;
+   SpriteObject* child1 = new SpriteObject;
    addnewObj(child1);
    child1->setname("randomball");
    rootObject->addChild(child1);
 
-    return SpriteObject();
 }
 
 //Gameobject * ObjectManager::GetGameObj()

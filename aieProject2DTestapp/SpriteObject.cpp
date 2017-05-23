@@ -14,6 +14,11 @@ SpriteObject::~SpriteObject()
 {
 }
 
+void SpriteObject::setSprite(aie::Texture* texture)
+{
+    m_texture = texture;
+}
+
 void SpriteObject::draw(aie::Renderer2D* renderer)
 {
     renderer->drawSpriteTransformed3x3(m_texture, (float*)&m_globalTransform);
