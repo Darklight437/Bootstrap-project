@@ -25,11 +25,13 @@ public:
 
  void updateLocalTransform(Matrix3 transformTo);
 
+ Matrix3 m_localtransform;
+
 
 protected:
 
     Matrix3 m_globalTransform;
-    Matrix3 m_localtransform;
+
     std::string m_name;
     Gameobject* m_parent;
     std::vector<Gameobject*> m_children;

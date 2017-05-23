@@ -35,8 +35,8 @@ void ObjectManager::addnewObj(SpriteObject* incomingObj)
 
 void ObjectManager::buildRootObject()
 {
-    aie::Texture* texturetest = &aie::Texture((exePath + "/textures/car.png").c_str());
-    Matrix3 testmatrix(1,1,1,1,1,1,1,1,1);
+    aie::Texture* texturetest = new aie::Texture((exePath + "/textures/rock_small.png").c_str());
+    Matrix3 testmatrix;
     SpriteObject* rootObject = new SpriteObject;
     addnewObj(rootObject);
     rootObject->setname("testcar");

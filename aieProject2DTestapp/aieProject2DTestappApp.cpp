@@ -3,6 +3,7 @@
 #include "Font.h"
 #include "Input.h"
 #include "ObjectManager.h"
+#include "Matrix3.h"
 
 aieProject2DTestappApp::aieProject2DTestappApp() {}
 
@@ -16,9 +17,8 @@ bool aieProject2DTestappApp::startup() {
     m_manager = new ObjectManager();
 	m_2dRenderer = new aie::Renderer2D();
 	m_font = new aie::Font(( m_manager->exePath+"/font/consolas.ttf").c_str(), 32);
-    //m_texture = new aie::Texture((manager->exePath+"/textures/car.png").c_str());
-    
-
+    m_texture = new aie::Texture((m_manager->exePath+"/textures/car.png").c_str());
+   
 
     m_manager->buildRootObject();
 	return true;
@@ -41,16 +41,14 @@ void aieProject2DTestappApp::update(float deltaTime) {
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
 
+    if (input->isKeyDown(aie::INPUT_KEY_A))
+    {
+        Matrix3 MT;
+        
+        m_manager->objectlist[0]->m_localtransform = m_manager->objectlist[0]->m_localtransform * MT;
+    }
 
-
-
-
-
-
-
-
-
-
+    m_manager->objectlist[0]->updateGlobalTransform();
 
 
 
@@ -67,12 +65,12 @@ void aieProject2DTestappApp::draw() {
 
     
     
-    m_manager->buildRootObject();
+
    
     
 
 	// wipe the screen to the background colour
-    setBackgroundColour(192, 192, 192, 0.7);
+    setBackgroundColour(192, 192, 192, 0);
     clearScreen();
     //set camera position before rendering
     m_2dRenderer->setCameraPos(0, 0);
@@ -80,7 +78,9 @@ void aieProject2DTestappApp::draw() {
 	m_2dRenderer->begin();
 	// draw your stuff here!
     
-    m_manager->objectlist[0]->draw(m_2dRenderer);
+    Matrix3 t = Matrix3();
+    m_2dRenderer->drawSpriteTransformed3x3(m_texture, t);
+    //m_manager->objectlist[0]->draw(m_2dRenderer);
   
 
 
