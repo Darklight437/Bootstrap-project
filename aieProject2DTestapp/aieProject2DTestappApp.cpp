@@ -18,9 +18,9 @@ bool aieProject2DTestappApp::startup() {
 	m_2dRenderer = new aie::Renderer2D();
 	m_font = new aie::Font(( m_manager->exePath+"/font/consolas.ttf").c_str(), 32);
     m_texture = new aie::Texture((m_manager->exePath+"/textures/car.png").c_str());
-   
-
     m_manager->buildRootObject();
+
+
 	return true;
 }
 
