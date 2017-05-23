@@ -19,6 +19,7 @@ public:
 
  virtual void update(float deltaTime);
     
+ void setname(std::string objectName);
 
 
 
@@ -27,6 +28,7 @@ protected:
 
     Matrix3 m_globalTransform;
     Matrix3 m_localtransform;
+    std::string m_name;
     Gameobject* m_parent;
     std::vector<Gameobject*> m_children;
     

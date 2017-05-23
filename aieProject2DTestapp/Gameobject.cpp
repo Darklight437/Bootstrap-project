@@ -64,4 +64,9 @@ void Gameobject::update(float deltaTime)
     }
 }
 
+void Gameobject::setname(std::string objectName)
+{
+    m_name = objectName;
+}
+
 

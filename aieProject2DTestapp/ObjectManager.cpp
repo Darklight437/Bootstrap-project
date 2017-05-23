@@ -41,6 +41,7 @@ Gameobject ObjectManager::buildRootObject()
    Gameobject* child1 = new Gameobject;
    addnewObj(child1);
 
+   rootObject->addChild(child1);
 
     return Gameobject();
 }
