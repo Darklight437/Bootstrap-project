@@ -19,12 +19,14 @@ public:
     void addnewObj(SpriteObject* incomingObj);
     //Gameobject* GetGameObj();
     std::string exePath;
+    //vector containing all game objects
+    std::vector<Gameobject*> objectlist;
 
 
     //main object for demo and 2 childeren
     void buildRootObject();
 protected:
-    std::vector<Gameobject*> objectlist;
+   
 
 
 

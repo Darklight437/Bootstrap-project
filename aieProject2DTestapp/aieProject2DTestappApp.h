@@ -21,8 +21,8 @@ public:
 
 
 protected:
-
+    ObjectManager*      m_manager;
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
-    aie::Texture* m_texture;
+    aie::Texture*       m_texture;
 };

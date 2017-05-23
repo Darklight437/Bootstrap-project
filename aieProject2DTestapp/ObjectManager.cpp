@@ -35,19 +35,19 @@ void ObjectManager::addnewObj(SpriteObject* incomingObj)
 
 void ObjectManager::buildRootObject()
 {
-  aie::Texture* texturetest = &aie::Texture((exePath + "/textures/car.png").c_str());
-  Matrix3 testmatrix;
-   SpriteObject* rootObject = new SpriteObject;
-   addnewObj(rootObject);
-   rootObject->setname("testcar");
-   SpriteObject* child1 = new SpriteObject;
-   addnewObj(child1);
-   child1->setname("randomball");
-   rootObject->addChild(child1);
-   rootObject->updateLocalTransform(testmatrix);
-
-   rootObject->setSprite(texturetest);
-   child1->setSprite(texturetest);
+    aie::Texture* texturetest = &aie::Texture((exePath + "/textures/car.png").c_str());
+    Matrix3 testmatrix(1,1,1,1,1,1,1,1,1);
+    SpriteObject* rootObject = new SpriteObject;
+    addnewObj(rootObject);
+    rootObject->setname("testcar");
+    SpriteObject* child1 = new SpriteObject;
+    addnewObj(child1);
+    child1->setname("randomball");
+    rootObject->addChild(child1);
+    rootObject->updateLocalTransform(testmatrix);
+    rootObject->updateGlobalTransform();
+    rootObject->setSprite(texturetest);
+    child1->setSprite(texturetest);
 
 }
 

@@ -2,7 +2,7 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
-
+#include "ObjectManager.h"
 
 aieProject2DTestappApp::aieProject2DTestappApp() {}
 
@@ -13,12 +13,14 @@ aieProject2DTestappApp::~aieProject2DTestappApp() {
 bool aieProject2DTestappApp::startup() {
 
 
-    ObjectManager* manager = new ObjectManager();
+    m_manager = new ObjectManager();
 	m_2dRenderer = new aie::Renderer2D();
-	m_font = new aie::Font(( manager->exePath+"/font/consolas.ttf").c_str(), 32);
+	m_font = new aie::Font(( m_manager->exePath+"/font/consolas.ttf").c_str(), 32);
     //m_texture = new aie::Texture((manager->exePath+"/textures/car.png").c_str());
     
 
+
+    m_manager->buildRootObject();
 	return true;
 }
 
@@ -54,15 +56,20 @@ void aieProject2DTestappApp::update(float deltaTime) {
 
 }
 
+
+
+ 
+
+
+
 void aieProject2DTestappApp::draw() {
+
+
     
     
-
-
-
-
-
-
+    m_manager->buildRootObject();
+   
+    
 
 	// wipe the screen to the background colour
     setBackgroundColour(192, 192, 192, 0.7);
@@ -72,26 +79,26 @@ void aieProject2DTestappApp::draw() {
 	// begin drawing sprites
 	m_2dRenderer->begin();
 	// draw your stuff here!
-
     
-
+    m_manager->objectlist[0]->draw(m_2dRenderer);
   
+
+
+
+
+
      // done drawing sprites
 
 
     m_2dRenderer->end();
 
- 
 }
 
 //    //fun little jojo reference put in draw
 //m_2dRenderer->setRenderColour(1, 1, 1, 1);
 //       
 ////m_2dRenderer->drawSpriteTransformed3x3(m_texture, );
-
 //       
-
 //m_2dRenderer->setRenderColour(0, 0, 0, 1);
-
 //    // output some text, uses the last used colour
 //m_2dRenderer->drawText(m_font, "F-MEGA", 600, 500);
