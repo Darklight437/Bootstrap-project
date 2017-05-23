@@ -4,6 +4,7 @@
 #include <vector>
 #include "Gameobject.h"
 #include "SpriteObject.h"
+#include "Texture.h"
 
 class ObjectManager
 {
