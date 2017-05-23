@@ -56,6 +56,7 @@ void Gameobject::draw(aie::Renderer2D * renderer)
 
 
 
+
 void Gameobject::update(float deltaTime)
 {
     for (auto child : m_children)
@@ -74,17 +75,6 @@ void Gameobject::updateLocalTransform(Matrix3 transformTo)
     m_localtransform = transformTo;
 }
 
-std::string AssetManager::getExecutableFolder() const
-{
-    char buffer[MAX_PATH];
-    GetModuleFileName(NULL, buffer, MAX_PATH);
-    char *pos;
-    if (pos = strrchr(buffer, '\\'))
-    {
-        *pos = 0;
-    }
 
-    return buffer;
-}
 
 

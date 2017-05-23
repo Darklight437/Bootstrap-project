@@ -3,7 +3,7 @@
 #include "Matrix3.h"
 #include <vector>
 #include <string>
-#include <Windows.h>
+
 
 enum class GOType{spriteobject};
 
@@ -26,8 +26,7 @@ public:
 
  void updateLocalTransform(Matrix3 transformTo);
 
- std::string AssetManager::getExecutableFolder();
-
+ 
 
  Matrix3 m_localtransform;
 

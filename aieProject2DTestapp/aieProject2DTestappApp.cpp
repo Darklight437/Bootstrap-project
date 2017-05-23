@@ -15,9 +15,9 @@ bool aieProject2DTestappApp::startup() {
 
     
 	m_2dRenderer = new aie::Renderer2D();
-	m_font = new aie::Font(( m_manager->exePath+"/font/consolas.ttf").c_str(), 32);
-    m_texture = new aie::Texture((m_manager->exePath+"/textures/car.png").c_str());
-    m_manager->buildRootObject();
+	m_font = new aie::Font((getExecutableFolder() +"/font/consolas.ttf").c_str(), 32);
+    m_playertexture = new aie::Texture((getExecutableFolder() +"/textures/car.png").c_str());
+    
 
 
 	return true;
@@ -40,15 +40,7 @@ void aieProject2DTestappApp::update(float deltaTime) {
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
 
-    if (input->isKeyDown(aie::INPUT_KEY_A))
-    {
-        Matrix3 MT;
-        
-        m_manager->objectlist[0]->m_localtransform = m_manager->objectlist[0]->m_localtransform * MT;
-    }
-
-    m_manager->objectlist[0]->updateGlobalTransform();
-
+   
 
 
 }
@@ -77,8 +69,9 @@ void aieProject2DTestappApp::draw() {
 	m_2dRenderer->begin();
 	// draw your stuff here!
     
-    Matrix3 t;
-    m_2dRenderer->drawSpriteTransformed3x3(m_texture, t);
+    Matrix3 t = Matrix3();
+   // t = t.identity();
+    m_2dRenderer->drawSpriteTransformed3x3(m_playertexture, t);
     //m_manager->objectlist[0]->draw(m_2dRenderer);
   
 
@@ -91,6 +84,23 @@ void aieProject2DTestappApp::draw() {
 
     m_2dRenderer->end();
 
+}
+
+
+
+
+
+std::string aieProject2DTestappApp::getExecutableFolder() const
+{
+    char buffer[MAX_PATH];
+    GetModuleFileName(NULL, buffer, MAX_PATH);
+    char *pos;
+    if (pos = strrchr(buffer, '\\'))
+    {
+        *pos = 0;
+    }
+
+    return buffer;
 }
 
 //    //fun little jojo reference put in draw
