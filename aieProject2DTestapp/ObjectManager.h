@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <vector>
 #include "Gameobject.h"
+#include "SpriteObject.h"
 
 class ObjectManager
 {
@@ -14,13 +15,13 @@ public:
     //ash's absolute directory code
     std::string getExecutableFolder() const;
 
-    void addnewObj(Gameobject* incomingObj);
+    void addnewObj(SpriteObject* incomingObj);
     //Gameobject* GetGameObj();
     std::string exePath;
 
 
     //main object for demo and 2 childeren
-    Gameobject buildRootObject();
+    void buildRootObject();
 protected:
     std::vector<Gameobject*> objectlist;
 

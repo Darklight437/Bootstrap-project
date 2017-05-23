@@ -25,7 +25,7 @@ std::string ObjectManager::getExecutableFolder() const
     return buffer;
 }
 
-void ObjectManager::addnewObj(Gameobject* incomingObj)
+void ObjectManager::addnewObj(SpriteObject* incomingObj)
 {
     if (incomingObj != nullptr)
     {
@@ -33,17 +33,17 @@ void ObjectManager::addnewObj(Gameobject* incomingObj)
     }
 }
 
-Gameobject ObjectManager::buildRootObject()
+void ObjectManager::buildRootObject()
 {
-   Gameobject* rootObject = new Gameobject;
+   Gameobject* rootObject = new SpriteObject;
    addnewObj(rootObject);
    rootObject->setname("testcar");
-   Gameobject* child1 = new Gameobject;
+   Gameobject* child1 = new SpriteObject;
    addnewObj(child1);
    child1->setname("randomball");
    rootObject->addChild(child1);
 
-    return Gameobject();
+    return SpriteObject();
 }
 
 //Gameobject * ObjectManager::GetGameObj()

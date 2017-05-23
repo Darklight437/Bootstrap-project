@@ -10,7 +10,7 @@ class Gameobject
 {
 public:
     Gameobject();
-    virtual ~Gameobject();
+    virtual ~Gameobject() = 0;
 
     void addChild(Gameobject* child);
 
