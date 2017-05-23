@@ -78,7 +78,7 @@ void aieProject2DTestappApp::draw() {
 	m_2dRenderer->begin();
 	// draw your stuff here!
     
-    Matrix3 t = Matrix3();
+    Matrix3 t;
     m_2dRenderer->drawSpriteTransformed3x3(m_texture, t);
     //m_manager->objectlist[0]->draw(m_2dRenderer);
   
