@@ -35,7 +35,12 @@ void ObjectManager::addnewObj(Gameobject* incomingObj)
 
 Gameobject ObjectManager::buildRootObject()
 {
-    new Gameobject("Root");
+   Gameobject* rootObject = new Gameobject;
+   addnewObj(rootObject);
+
+   Gameobject* child1 = new Gameobject;
+   addnewObj(child1);
+
 
     return Gameobject();
 }
