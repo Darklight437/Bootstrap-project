@@ -2,7 +2,6 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
-#include "ObjectManager.h"
 #include "Matrix3.h"
 
 aieProject2DTestappApp::aieProject2DTestappApp() {}
@@ -14,7 +13,7 @@ aieProject2DTestappApp::~aieProject2DTestappApp() {
 bool aieProject2DTestappApp::startup() {
 
 
-    m_manager = new ObjectManager();
+    
 	m_2dRenderer = new aie::Renderer2D();
 	m_font = new aie::Font(( m_manager->exePath+"/font/consolas.ttf").c_str(), 32);
     m_texture = new aie::Texture((m_manager->exePath+"/textures/car.png").c_str());

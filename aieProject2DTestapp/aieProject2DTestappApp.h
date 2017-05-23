@@ -2,7 +2,6 @@
 
 #include "Application.h"
 #include "Renderer2D.h"
-#include "ObjectManager.h"
 #include <string>
 
 class aieProject2DTestappApp : public aie::Application {
@@ -21,7 +20,6 @@ public:
 
 
 protected:
-    ObjectManager*      m_manager;
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
     aie::Texture*       m_texture;
