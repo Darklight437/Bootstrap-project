@@ -51,13 +51,8 @@ void aieProject2DTestappApp::update(float deltaTime) {
 
 
 
-void aieProject2DTestappApp::draw() {
-
-
-    
-    
-
-   
+void aieProject2DTestappApp::draw() 
+{
     
 
 	// wipe the screen to the background colour
@@ -74,10 +69,6 @@ void aieProject2DTestappApp::draw() {
     m_2dRenderer->drawSpriteTransformed3x3(m_playertexture, t);
     //m_manager->objectlist[0]->draw(m_2dRenderer);
   
-
-
-
-
 
      // done drawing sprites
 
