@@ -18,17 +18,17 @@ public:
     void updateGlobalTransform();
 
 
- virtual void draw(aie::Renderer2D* renderer);
+	virtual void draw(aie::Renderer2D* renderer);
 
- virtual void update(float deltaTime);
+	virtual void update(float deltaTime);
     
- void setname(std::string objectName);
+	void setname(std::string objectName);
 
- void updateLocalTransform(Matrix3 transformTo);
+	void updateLocalTransform(Matrix3 transformTo);
 
  
 
- Matrix3 m_localtransform;
+ 
 
 
 protected:
