@@ -30,6 +30,9 @@
     <ClCompile Include="ObjectFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Trasnsform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aieProject2DTestappApp.h">
@@ -43,6 +46,9 @@
     </ClInclude>
     <ClInclude Include="ObjectFactory.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trasnsform.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
