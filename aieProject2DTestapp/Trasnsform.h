@@ -17,7 +17,7 @@ public:
 
 	Matrix3 update();
 	Matrix3 rotate(float rotateBy);
-	Matrix3 scale(float scale);
+	void scale(float scale);
 
 
 
