@@ -1,6 +1,6 @@
 #pragma once
 #include "Matrix3.h"
-
+#include<vector>
 
 class Trasnsform
 {
@@ -10,16 +10,25 @@ public:
 	~Trasnsform();
 
 	Matrix3 m_localtransform;
-
-	Matrix3 transform;
-	Matrix3 roatation;
-	Matrix3 scale;
-
-	Matrix3 update();
-	Matrix3 rotate(float rotateBy);
-	void scale(float scale);
+    Matrix3 m_globalTransform;
+	
 
 
+    void UpdateTransform();
+	void setscale(const float scaleby);
+    void addChild(Trasnsform * child);
+    std::vector<Trasnsform*> getChilderen();
+
+protected:
+
+
+
+
+    Trasnsform* m_parent;
+    std::vector<Trasnsform*> m_children;
+    Matrix3 m_transform;
+    Matrix3 m_roatation;
+    Matrix3 m_scale;
 
 };
 
