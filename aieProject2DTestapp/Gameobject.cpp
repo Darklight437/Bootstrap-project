@@ -4,7 +4,7 @@
 
 Gameobject::Gameobject()
 {
-    
+    Transform2D.masterObject = this;
 }
 
 
@@ -17,15 +17,22 @@ Gameobject::~Gameobject()
 
 
 
-void Gameobject::draw(aie::Renderer2D * renderer)
+void Gameobject::draw(aie::Renderer2D* renderer)
 {
-    for (auto child : Trasnform2D.getChildren)
+
+    renderer->drawSpriteTransformed3x3(m_texture, (float*)&Transform2D.m_globalTransform);
+
+
+    for (auto child : Transform2D.m_children)
     {
-        child->draw(renderer);
+        child->masterObject->draw(renderer);
     }
 }
 
-
+void Gameobject::setSprite(aie::Texture* texture)
+{
+    m_texture = texture;
+}
 
 
 

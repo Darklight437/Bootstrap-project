@@ -17,6 +17,7 @@ bool aieProject2DTestappApp::startup() {
 	m_2dRenderer = new aie::Renderer2D();
 	m_font = new aie::Font((getExecutableFolder() +"/font/consolas.ttf").c_str(), 32);
     m_playertexture = new aie::Texture((getExecutableFolder() +"/textures/car.png").c_str());
+    mainObject.setSprite(m_playertexture);
     
 
 
@@ -64,11 +65,9 @@ void aieProject2DTestappApp::draw()
 	m_2dRenderer->begin();
 	// draw your stuff here!
     
-    Matrix3 t = Matrix3();
-   // t = t.identity();
-    m_2dRenderer->drawSpriteTransformed3x3(m_playertexture, t);
-    //m_manager->objectlist[0]->draw(m_2dRenderer);
-  
+    mainObject.draw(m_2dRenderer);
+    mainObject.Transform2D.setscale(3);
+
 
      // done drawing sprites
 

@@ -2,6 +2,7 @@
 
 #include "Application.h"
 #include "Renderer2D.h"
+#include "Gameobject.h"
 #include <string>
 #include <Windows.h>
 #include <vector>
@@ -15,6 +16,8 @@ public:
 	virtual bool startup();
 	virtual void shutdown();
 
+    Gameobject mainObject;
+    
 	virtual void update(float deltaTime);
 	virtual void draw();
 
@@ -26,4 +29,5 @@ protected:
 	aie::Font*			m_font;
     aie::Texture*       m_playertexture;
     std::vector<aie::Texture> texturelist;
+
 };

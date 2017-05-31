@@ -12,30 +12,20 @@ class Gameobject
 {
 public:
     Gameobject();
-    virtual ~Gameobject() = 0;
-
-   
+    ~Gameobject() ;
 
 
-
-    Trasnsform Trasnform2D;
-	virtual void draw(aie::Renderer2D* renderer);
-
-	
+    Transform Transform2D;
+	void draw(aie::Renderer2D* renderer);
+    void setSprite(aie::Texture* texture);
     
+	
 	void setname(std::string objectName);
-
-
- 
-
- 
 
 
 protected:
 
-
+    aie::Texture* m_texture;
     std::string m_name;
   
-    
-
 };

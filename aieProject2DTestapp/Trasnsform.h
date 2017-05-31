@@ -1,34 +1,46 @@
 #pragma once
 #include "Matrix3.h"
 #include<vector>
+#include "Renderer2D.h"
+//#include "Gameobject.h"
 
-class Trasnsform
+class Gameobject;
+
+class Transform
 {
 public:
 
-	Trasnsform();
-	~Trasnsform();
+	Transform();
+	~Transform();
 
+
+    
 	Matrix3 m_localtransform;
     Matrix3 m_globalTransform;
-	
+    Gameobject* masterObject;
 
-
+    
     void UpdateTransform();
 	void setscale(const float scaleby);
-    void addChild(Trasnsform * child);
+    void rotateX(const float& amount);
+    void rotateY(const float& amount);
+    void translateX(const float& amount);
+    void translateY(const float& amount);
+
+    void addChild(Transform * child);
     void update(float deltatime);
-    std::vector<Trasnsform*> getChildren();
+    
+    std::vector<Transform*> m_children;
 
 protected:
 
 
 
 
-    Trasnsform* m_parent;
-    std::vector<Trasnsform*> m_children;
-    Matrix3 m_transform;
-    Matrix3 m_roatation;
+    Transform* m_parent;
+    
+    Matrix3 m_position;
+    Matrix3 m_rotation;
     Matrix3 m_scale;
 
 };

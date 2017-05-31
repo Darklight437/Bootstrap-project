@@ -5,13 +5,13 @@
 
 
 
-Trasnsform::Trasnsform()
+Transform::Transform()
 {
     m_parent = (nullptr);
 }
 
 
-Trasnsform::~Trasnsform()
+Transform::~Transform()
 {
     for (auto child : m_children)
     {
@@ -20,9 +20,11 @@ Trasnsform::~Trasnsform()
 }
 
 
-void Trasnsform::UpdateTransform()
+
+
+void Transform::UpdateTransform()
 {  
-        m_localtransform = m_roatation * m_scale* m_transform;
+        m_localtransform = m_roatation * m_scale* m_position;
 
             if (m_parent != nullptr)
             {
@@ -35,11 +37,11 @@ void Trasnsform::UpdateTransform()
             }
             for (auto child : m_children)
             {
-                child->update();
+                child->UpdateTransform();
             }        
 }
 
-void Trasnsform::addChild(Trasnsform * child)
+void Transform::addChild(Transform * child)
 {
     if (child->m_parent == nullptr)
     {
@@ -49,12 +51,8 @@ void Trasnsform::addChild(Trasnsform * child)
 
 }
 
-std::vector<Trasnsform*> Trasnsform::getChildren()
-{
-    return m_children;
-}
 
-void Trasnsform::update(float deltaTime)
+void Transform::update(float deltaTime)
 {
     for (auto child : m_children)
     {
@@ -64,11 +62,31 @@ void Trasnsform::update(float deltaTime)
 
 
 
-void Trasnsform::setscale(const float scaleby)
+void Transform::setscale(const float scaleby)
 {
 	//multiply the scale values of the scale matrix by the float
 	//update the scale matrix
     m_scale = Matrix3(scaleby, 0, 0, 0, scaleby, 0, 0, 0, scaleby);
+}
+
+void Transform::rotateX(const float & amount)
+{
+    Matrix3 rotation;
+    rotation.setRotateX(amount);
+    m_rotation = rotation;
+}
+
+void Transform::rotateY(const float & amount)
+{
+    Matrix3 rotation;
+    rotation.setRotateY(amount);
+    m_rotation = rotation;
+}
+
+void Transform::translateX(const float & amount)
+{
+    
+
 }
 
 
