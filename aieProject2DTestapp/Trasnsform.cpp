@@ -24,7 +24,7 @@ Transform::~Transform()
 
 void Transform::UpdateTransform()
 {  
-        m_localtransform = m_roatation * m_scale* m_position;
+        m_localtransform = m_rotation * m_scale* m_position;
 
             if (m_parent != nullptr)
             {
@@ -85,8 +85,13 @@ void Transform::rotateY(const float & amount)
 
 void Transform::translateX(const float & amount)
 {
-    
-
+    m_position.u.z1 += amount;
 }
+
+void Transform::translateY(const float & amount)
+{
+    m_position.u.z2 += amount;
+}
+
 
 

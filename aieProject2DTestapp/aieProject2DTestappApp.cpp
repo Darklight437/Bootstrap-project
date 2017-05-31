@@ -17,6 +17,7 @@ bool aieProject2DTestappApp::startup() {
 	m_2dRenderer = new aie::Renderer2D();
 	m_font = new aie::Font((getExecutableFolder() +"/font/consolas.ttf").c_str(), 32);
     m_playertexture = new aie::Texture((getExecutableFolder() +"/textures/car.png").c_str());
+    //Gameobject mainObject = new Gameobject;
     mainObject.setSprite(m_playertexture);
     
 
@@ -41,7 +42,10 @@ void aieProject2DTestappApp::update(float deltaTime) {
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
 
-   
+    if ( input->isKeyDown(aie::INPUT_KEY_D))
+    {
+        mainObject.Transform2D.setscale(7);
+    }
 
 
 }
