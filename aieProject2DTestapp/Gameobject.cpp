@@ -19,7 +19,7 @@ Gameobject::~Gameobject()
 
 void Gameobject::draw(aie::Renderer2D * renderer)
 {
-    for (auto child : Trasnform2D.getChilderen)
+    for (auto child : Trasnform2D.getChildren)
     {
         child->draw(renderer);
     }
@@ -28,13 +28,7 @@ void Gameobject::draw(aie::Renderer2D * renderer)
 
 
 
-void Gameobject::update(float deltaTime)
-{
-    for (auto child : Trasnform2D.getChilderen())
-    {
-        child->update(deltaTime);
-    }
-}
+
 
 void Gameobject::setname(std::string objectName)
 {

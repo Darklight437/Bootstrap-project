@@ -17,7 +17,8 @@ public:
     void UpdateTransform();
 	void setscale(const float scaleby);
     void addChild(Trasnsform * child);
-    std::vector<Trasnsform*> getChilderen();
+    void update(float deltatime);
+    std::vector<Trasnsform*> getChildren();
 
 protected:
 

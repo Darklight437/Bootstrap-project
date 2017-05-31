@@ -21,7 +21,7 @@ void SpriteObject::setSprite(aie::Texture* texture)
 
 void SpriteObject::draw(aie::Renderer2D* renderer)
 {
-    renderer->drawSpriteTransformed3x3(m_texture, (float*)&m_globalTransform);
+    renderer->drawSpriteTransformed3x3(m_texture, (float*)&Trasnform2D.m_globalTransform);
 
     //call base draw
     Gameobject::draw(renderer);

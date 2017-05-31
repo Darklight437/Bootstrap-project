@@ -21,7 +21,7 @@ public:
     Trasnsform Trasnform2D;
 	virtual void draw(aie::Renderer2D* renderer);
 
-	virtual void update(float deltaTime);
+	
     
 	void setname(std::string objectName);
 

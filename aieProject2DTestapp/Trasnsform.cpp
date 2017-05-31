@@ -49,12 +49,18 @@ void Trasnsform::addChild(Trasnsform * child)
 
 }
 
-std::vector<Trasnsform*> Trasnsform::getChilderen()
+std::vector<Trasnsform*> Trasnsform::getChildren()
 {
     return m_children;
 }
 
-
+void Trasnsform::update(float deltaTime)
+{
+    for (auto child : m_children)
+    {
+        child->update(deltaTime);
+    }
+}
 
 
 
