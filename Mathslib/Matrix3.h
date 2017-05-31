@@ -58,6 +58,11 @@ public:
     //asignment operator
     Matrix3 & operator =(const Matrix3 &other);
 
+    // + operator with scalar
+    Matrix3 Matrix3::operator + (const float& scalar);
+    void Matrix3::operator += (const float& scalar);
+
+
     //square bracket operator overload to get a row
     Vector3& operator [] (int input);
     //identity matrix creator
