@@ -54,7 +54,9 @@ public:
 
     //matrix * matrix
     Matrix3 operator *(Matrix3 rhs);
-
+    //matrix * float
+    Matrix3 operator * (float rhs);
+    void operator *= (float rhs);
     //asignment operator
     Matrix3 & operator =(const Matrix3 &other);
 

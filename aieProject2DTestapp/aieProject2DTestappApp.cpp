@@ -38,13 +38,15 @@ void aieProject2DTestappApp::update(float deltaTime) {
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
+
+    mainObject.Transform2D.UpdateTransform();
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
 
     if ( input->isKeyDown(aie::INPUT_KEY_D))
     {
-        mainObject.Transform2D.setscale(7);
+        mainObject.Transform2D.setscale(2);
     }
 
 

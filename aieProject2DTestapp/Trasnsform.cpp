@@ -24,7 +24,7 @@ Transform::~Transform()
 
 void Transform::UpdateTransform()
 {  
-        m_localtransform = m_rotation * m_scale* m_position;
+        m_localtransform = m_scale * m_rotation * m_position;
 
             if (m_parent != nullptr)
             {
@@ -39,6 +39,14 @@ void Transform::UpdateTransform()
             {
                 child->UpdateTransform();
             }        
+}
+
+void Transform::scale(float scaleby)
+{
+
+    m_scale = scaleby * m_scale;
+}
+
 }
 
 void Transform::addChild(Transform * child)
@@ -59,6 +67,7 @@ void Transform::update(float deltaTime)
         child->update(deltaTime);
     }
 }
+
 
 
 

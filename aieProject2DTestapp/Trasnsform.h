@@ -21,6 +21,7 @@ public:
 
     
     void UpdateTransform();
+    void scale(float scaleby);
 	void setscale(const float scaleby);
     void rotateX(const float& amount);
     void rotateY(const float& amount);
