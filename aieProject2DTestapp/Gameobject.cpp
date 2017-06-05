@@ -5,6 +5,7 @@
 Gameobject::Gameobject()
 {
     Transform2D.masterObject = this;
+    m_texture = nullptr;
 }
 
 
@@ -20,7 +21,11 @@ Gameobject::~Gameobject()
 void Gameobject::draw(aie::Renderer2D* renderer)
 {
 
-    renderer->drawSpriteTransformed3x3(m_texture, (float*)&Transform2D.m_globalTransform);
+    if ( m_texture != nullptr)
+    {
+        renderer->drawSpriteTransformed3x3(m_texture, Transform2D.m_globalTransform);
+    }
+   
 
 
     for (auto child : Transform2D.m_children)

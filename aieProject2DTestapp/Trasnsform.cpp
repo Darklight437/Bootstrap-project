@@ -15,7 +15,7 @@ Transform::~Transform()
 {
     for (auto child : m_children)
     {
-        delete child;
+//        delete child;
     }
 }
 
@@ -44,8 +44,9 @@ void Transform::UpdateTransform()
 void Transform::scale(float scaleby)
 {
 
-    m_scale *= scaleby;
-    m_scale.u.z3 = 1;
+    m_scale.u.x1 += scaleby;
+    m_scale.u.y2 += scaleby;
+    
 
 }
 
@@ -78,19 +79,14 @@ void Transform::setscale(const float scaleby)
     m_scale = Matrix3(scaleby, 0, 0, 0, scaleby, 0, 0, 0, scaleby);
 }
 
-void Transform::rotateX(const float & amount)
+void Transform::rotate(const float & amount)
 {
     Matrix3 rotation;
-    rotation.setRotateX(amount);
-    m_rotation = rotation;
+    rotation.setRotateZ(amount);
+    m_rotation = m_rotation * rotation;
 }
 
-void Transform::rotateY(const float & amount)
-{
-    Matrix3 rotation;
-    rotation.setRotateY(amount);
-    m_rotation = rotation;
-}
+
 
 void Transform::translateX(const float & amount)
 {

@@ -23,8 +23,7 @@ public:
     void UpdateTransform();
     void scale(float scaleby);
 	void setscale(const float scaleby);
-    void rotateX(const float& amount);
-    void rotateY(const float& amount);
+    void rotate(const float & amount);
     void translateX(const float& amount);
     void translateY(const float& amount);
 

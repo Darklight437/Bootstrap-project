@@ -16,10 +16,22 @@ bool aieProject2DTestappApp::startup() {
     
 	m_2dRenderer = new aie::Renderer2D();
 	m_font = new aie::Font((getExecutableFolder() +"/font/consolas.ttf").c_str(), 32);
-    m_playertexture = new aie::Texture((getExecutableFolder() +"/textures/car.png").c_str());
-    //Gameobject mainObject = new Gameobject;
+    m_playertexture = new aie::Texture((getExecutableFolder() +"/textures/ship.png").c_str());
+
+
+
+
+
     mainObject.setSprite(m_playertexture);
-    
+
+    childship.setSprite(m_playertexture);
+
+
+    mainObject.Transform2D.addChild(&empty1.Transform2D);
+    empty1.Transform2D.addChild(&ship2ptr->Transform2D);
+
+
+    childship.Transform2D.translateX(300);
 
 
 	return true;
@@ -37,16 +49,49 @@ void aieProject2DTestappApp::update(float deltaTime) {
 
 	// input example
 	aie::Input* input = aie::Input::getInstance();
+
+    //switch (input->isKeyDown)
+    //{
+    //
+    //}
+
+    empty1.Transform2D.rotate(1 * deltaTime);
+
+    if (input->isKeyDown(aie::INPUT_KEY_Q))
+    {
+        mainObject.Transform2D.rotate(0.5 * deltaTime);
+    }
+
     if (input->isKeyDown(aie::INPUT_KEY_D))
     {
-       mainObject.Transform2D.translateX(5);
+       mainObject.Transform2D.translateX(120 * deltaTime);
     }
 
     if (input->isKeyDown(aie::INPUT_KEY_A))
     {
-        mainObject.Transform2D.scale(2);
+        mainObject.Transform2D.translateX(-120 * deltaTime);
     }
 
+    if (input->isKeyDown(aie::INPUT_KEY_W))
+    {
+        mainObject.Transform2D.translateY(120 * deltaTime);
+    }
+
+    if (input->isKeyDown(aie::INPUT_KEY_S))
+    {
+        mainObject.Transform2D.translateY(-120 * deltaTime);
+    }
+    
+
+    if (input->isKeyDown(aie::INPUT_KEY_LEFT_SHIFT))
+    {
+        mainObject.Transform2D.scale(1 * deltaTime);
+    }
+
+    if (input->isKeyDown(aie::INPUT_KEY_LEFT_CONTROL))
+    {
+        mainObject.Transform2D.scale(-1 * deltaTime);
+    }
     mainObject.Transform2D.UpdateTransform();
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
@@ -79,7 +124,7 @@ void aieProject2DTestappApp::draw()
     mainObject.draw(m_2dRenderer);
 
 
-
+    
      // done drawing sprites
 
 
