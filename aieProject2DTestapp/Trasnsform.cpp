@@ -24,8 +24,8 @@ Transform::~Transform()
 
 void Transform::UpdateTransform()
 {  
-        m_localtransform = m_scale * m_rotation * m_position;
-
+        m_localtransform = m_position * m_rotation *  m_scale;
+        
             if (m_parent != nullptr)
             {
                 m_globalTransform = m_parent->m_globalTransform * m_localtransform;
@@ -44,8 +44,8 @@ void Transform::UpdateTransform()
 void Transform::scale(float scaleby)
 {
 
-    m_scale = scaleby * m_scale;
-}
+    m_scale *= scaleby;
+    m_scale.u.z3 = 1;
 
 }
 

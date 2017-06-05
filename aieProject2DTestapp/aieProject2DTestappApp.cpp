@@ -37,17 +37,22 @@ void aieProject2DTestappApp::update(float deltaTime) {
 
 	// input example
 	aie::Input* input = aie::Input::getInstance();
+    if (input->isKeyDown(aie::INPUT_KEY_D))
+    {
+       mainObject.Transform2D.translateX(5);
+    }
 
+    if (input->isKeyDown(aie::INPUT_KEY_A))
+    {
+        mainObject.Transform2D.scale(2);
+    }
 
     mainObject.Transform2D.UpdateTransform();
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
 
-    if ( input->isKeyDown(aie::INPUT_KEY_D))
-    {
-        mainObject.Transform2D.setscale(2);
-    }
+    
 
 
 }
@@ -72,7 +77,7 @@ void aieProject2DTestappApp::draw()
 	// draw your stuff here!
     
     mainObject.draw(m_2dRenderer);
-    mainObject.Transform2D.setscale(3);
+
 
 
      // done drawing sprites
