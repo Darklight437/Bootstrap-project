@@ -27,6 +27,9 @@
     <ClCompile Include="Trasnsform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ConsoleManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aieProject2DTestappApp.h">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Trasnsform.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleManager.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
