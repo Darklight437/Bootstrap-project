@@ -101,7 +101,6 @@
     <ClCompile Include="aieProject2DTestappApp.cpp" />
     <ClCompile Include="ConsoleManager.cpp" />
     <ClCompile Include="Gameobject.cpp" />
-    <ClCompile Include="linkList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Trasnsform.cpp" />
   </ItemGroup>
