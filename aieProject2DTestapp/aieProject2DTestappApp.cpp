@@ -20,21 +20,23 @@ bool aieProject2DTestappApp::startup() {
 
 
 
+    Gameobject* emptySpinner = new Gameobject;
+    emptySpinner->setname("emptySpinner");
+    Gameobject* emptyMover = new Gameobject;
+    emptyMover->setname("emptyMover");
+    emptyMover->Transform2D.addChild(&emptySpinner->Transform2D);
+    Gameobject* correctText = new Gameobject;
+    Gameobject* incorrectText = new Gameobject;
+    emptySpinner->Transform2D.addChild(&correctText->Transform2D);
+    emptySpinner->Transform2D.addChild(&incorrectText->Transform2D);
 
 
-    mainObject.setSprite(m_playertexture);
+    objectList.pushBack(emptyMover);
+    objectList.pushBack(emptySpinner);
+    objectList.pushBack(correctText);
+    objectList.pushBack(incorrectText);
 
-    childship.setSprite(m_playertexture);
-
-
-    mainObject.Transform2D.addChild(&empty1.Transform2D);
-    empty1.Transform2D.addChild(&ship2ptr->Transform2D);
-
-
-    childship.Transform2D.translateX(300);
-
-
-	return true;
+    return true;
 }
 
 void aieProject2DTestappApp::shutdown() {
@@ -50,49 +52,23 @@ void aieProject2DTestappApp::update(float deltaTime) {
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
-    //switch (input->isKeyDown)
-    //{
-    //
-    //}
-
-    empty1.Transform2D.rotate(1 * deltaTime);
-
-    if (input->isKeyDown(aie::INPUT_KEY_Q))
-    {
-        mainObject.Transform2D.rotate(0.5 * deltaTime);
-    }
-
-    if (input->isKeyDown(aie::INPUT_KEY_D))
-    {
-       mainObject.Transform2D.translateX(120 * deltaTime);
-    }
-
-    if (input->isKeyDown(aie::INPUT_KEY_A))
-    {
-        mainObject.Transform2D.translateX(-120 * deltaTime);
-    }
-
-    if (input->isKeyDown(aie::INPUT_KEY_W))
-    {
-        mainObject.Transform2D.translateY(120 * deltaTime);
-    }
-
-    if (input->isKeyDown(aie::INPUT_KEY_S))
-    {
-        mainObject.Transform2D.translateY(-120 * deltaTime);
-    }
     
 
-    if (input->isKeyDown(aie::INPUT_KEY_LEFT_SHIFT))
-    {
-        mainObject.Transform2D.scale(1 * deltaTime);
-    }
+   
+    if (input->isKeyDown(aie::INPUT_KEY_Q)){}
 
-    if (input->isKeyDown(aie::INPUT_KEY_LEFT_CONTROL))
-    {
-        mainObject.Transform2D.scale(-1 * deltaTime);
-    }
-    mainObject.Transform2D.UpdateTransform();
+    if (input->isKeyDown(aie::INPUT_KEY_D)){}
+
+    if (input->isKeyDown(aie::INPUT_KEY_A)){}
+
+    if (input->isKeyDown(aie::INPUT_KEY_W)){}
+
+    if (input->isKeyDown(aie::INPUT_KEY_S)){}
+    
+    if (input->isKeyDown(aie::INPUT_KEY_LEFT_SHIFT)){}
+
+    if (input->isKeyDown(aie::INPUT_KEY_LEFT_CONTROL)){}
+    
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
@@ -120,8 +96,8 @@ void aieProject2DTestappApp::draw()
 	// begin drawing sprites
 	m_2dRenderer->begin();
 	// draw your stuff here!
+    //call the draw function of the highest object to 
     
-    mainObject.draw(m_2dRenderer);
 
 
     

@@ -3,6 +3,7 @@
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Gameobject.h"
+#include "linkList.h"
 #include "Trasnsform.h"
 #include <string>
 #include <Windows.h>
@@ -16,13 +17,12 @@ public:
 
 	virtual bool startup();
 	virtual void shutdown();
+    //lsit of objects in the game
+    LinkList<Gameobject*> objectList;
+   
 
-    Gameobject mainObject;
-    Gameobject empty1;
-    Gameobject childship;
-    Gameobject* emptyptr = &empty1;
-    Gameobject* ship2ptr = &childship;
-    
+
+
 	virtual void update(float deltaTime);
 	virtual void draw();
 
