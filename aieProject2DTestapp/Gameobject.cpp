@@ -28,7 +28,7 @@ void Gameobject::draw(aie::Renderer2D* renderer)
     }
     else if (m_font != nullptr)
     {
-        renderer->drawText(m_font, m_text, );
+   //     renderer->drawText(m_font, m_text, );
     }
 
    
