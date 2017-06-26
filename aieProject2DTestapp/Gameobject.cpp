@@ -33,7 +33,7 @@ void Gameobject::draw(aie::Renderer2D* renderer)
 
    
 
-
+    //calls all childeren to draw 
     for (auto child : Transform2D.m_children)
     {
         child->masterObject->draw(renderer);
