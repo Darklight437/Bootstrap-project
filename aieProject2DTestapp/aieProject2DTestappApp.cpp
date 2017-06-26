@@ -20,21 +20,6 @@ bool aieProject2DTestappApp::startup() {
 
 
 
-    Gameobject* emptySpinner = new Gameobject;
-    emptySpinner->setname("emptySpinner");
-    Gameobject* emptyMover = new Gameobject;
-    emptyMover->setname("emptyMover");
-    emptyMover->Transform2D.addChild(&emptySpinner->Transform2D);
-    Gameobject* correctText = new Gameobject;
-    Gameobject* incorrectText = new Gameobject;
-    emptySpinner->Transform2D.addChild(&correctText->Transform2D);
-    emptySpinner->Transform2D.addChild(&incorrectText->Transform2D);
-
-
-    objectList.pushBack(emptyMover);
-    objectList.pushBack(emptySpinner);
-    objectList.pushBack(correctText);
-    objectList.pushBack(incorrectText);
 
     return true;
 }

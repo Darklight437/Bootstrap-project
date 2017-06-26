@@ -108,7 +108,6 @@
     <ClInclude Include="aieProject2DTestappApp.h" />
     <ClInclude Include="ConsoleManager.h" />
     <ClInclude Include="Gameobject.h" />
-    <ClInclude Include="linkList.h" />
     <ClInclude Include="Trasnsform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
