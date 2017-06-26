@@ -6,6 +6,7 @@ Gameobject::Gameobject()
 {
     Transform2D.masterObject = this;
     m_texture = nullptr;
+    m_font = nullptr;
 }
 
 
@@ -25,6 +26,11 @@ void Gameobject::draw(aie::Renderer2D* renderer)
     {
         renderer->drawSpriteTransformed3x3(m_texture, Transform2D.m_globalTransform);
     }
+    else if (m_font != nullptr)
+    {
+        renderer->drawText(m_font, m_text, );
+    }
+
    
 
 
@@ -38,6 +44,17 @@ void Gameobject::setSprite(aie::Texture* texture)
 {
     m_texture = texture;
 }
+
+void Gameobject::setsprite(aie::Font * font)
+{
+    m_font = font;
+}
+
+void Gameobject::setText(const char text)
+{
+    m_text = &text;
+}
+
 
 
 
