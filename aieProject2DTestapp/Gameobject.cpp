@@ -19,6 +19,11 @@ Gameobject::~Gameobject()
 
 
 
+const char* Gameobject::setText(const char* text)
+{
+    return m_text;
+}
+
 void Gameobject::draw(aie::Renderer2D* renderer)
 {
 
@@ -50,9 +55,9 @@ void Gameobject::setsprite(aie::Font * font)
     m_font = font;
 }
 
-void Gameobject::setText(const char text)
+void Gameobject::setText(char text)
 {
-    m_text = &text;
+    m_text = text;
 }
 
 

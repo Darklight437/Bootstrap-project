@@ -17,7 +17,7 @@ bool aieProject2DTestappApp::startup() {
 	m_2dRenderer = new aie::Renderer2D();
 	m_font = new aie::Font((getExecutableFolder() +"/font/consolas.ttf").c_str(), 32);
     m_playertexture = new aie::Texture((getExecutableFolder() +"/textures/ship.png").c_str());
-    correctText.setText("Correct!");
+    correctText.setText("correct!");
     correctText.setSprite(m_font);
 
 
