@@ -16,17 +16,16 @@ public:
 
 
     Transform Transform2D;
-    char getText();
 	void draw(aie::Renderer2D* renderer);
     void setSprite(aie::Texture* texture);
     void setsprite(aie::Font* font);
-    const char* setText(const char* text);
+    void setText(const char text);
 	void setname(std::string objectName);
 
 
 protected:
 
-    const char* m_text;
+    char m_text;
     aie::Texture* m_texture;
     std::string m_name;
     aie::Font* m_font;
