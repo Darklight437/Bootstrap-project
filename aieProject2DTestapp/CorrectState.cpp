@@ -13,6 +13,5 @@ CorrectState::~CorrectState()
 
 void CorrectState::update()
 {
-    //make a splash screen and a spacebar to continue button
-    //if space is pressed tell state manager to switch to play state
+ //change the sprite of the game object to the "correct" sprite
 }
