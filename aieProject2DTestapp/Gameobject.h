@@ -18,8 +18,8 @@ public:
     Transform Transform2D;
 	void draw(aie::Renderer2D* renderer);
     void setSprite(aie::Texture* texture);
-    void setsprite(aie::Font* font);
-    void setText(const char text);
+    void setFont(aie::Font* font);
+    void setText(const char* text);
 	void setname(std::string objectName);
 
 

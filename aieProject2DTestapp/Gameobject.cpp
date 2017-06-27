@@ -45,14 +45,14 @@ void Gameobject::setSprite(aie::Texture* texture)
     m_texture = texture;
 }
 
-void Gameobject::setsprite(aie::Font * font)
+void Gameobject::setFont(aie::Font * font)
 {
     m_font = font;
 }
 
-void Gameobject::setText( char text)
+void Gameobject::setText(const char* text)
 {
-    m_text = text;
+    m_text =* text;
 }
 
 
