@@ -25,7 +25,7 @@ public:
 
 protected:
 
-    char m_text;
+    const char* m_text;
     aie::Texture* m_texture;
     std::string m_name;
     aie::Font* m_font;
