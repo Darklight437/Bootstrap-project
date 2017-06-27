@@ -45,7 +45,7 @@ void aieProject2DTestappApp::update(float deltaTime) {
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
-    
+    emptySpinner.Transform2D.rotate(4 * deltaTime);
 
    
     if (input->isKeyDown(aie::INPUT_KEY_Q)){}
@@ -65,7 +65,7 @@ void aieProject2DTestappApp::update(float deltaTime) {
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
-
+    emptyMover.Transform2D.UpdateTransform();
     
 
 
@@ -118,6 +118,11 @@ std::string aieProject2DTestappApp::getExecutableFolder() const
 
     return buffer;
 }
+
+
+
+
+
 
 //    //fun little jojo reference put in draw
 //m_2dRenderer->setRenderColour(1, 1, 1, 1);
