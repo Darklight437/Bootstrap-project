@@ -15,10 +15,12 @@ bool aieProject2DTestappApp::startup() {
 
     
 	m_2dRenderer = new aie::Renderer2D();
-	m_font = new aie::Font((getExecutableFolder() +"/font/consolas.ttf").c_str(), 32);
-    m_playertexture = new aie::Texture((getExecutableFolder() +"/textures/ship.png").c_str());
-    correctText.setSprite(m_playertexture);
-    correctText.setFont(m_font);
+	//m_font = new aie::Font((getExecutableFolder() +"/font/consolas.ttf").c_str(), 32);
+    m_yesTexture = new aie::Texture((getExecutableFolder() +"/textures/YES.png").c_str());
+    m_noTexture = new aie::Texture((getExecutableFolder() + "/textures/NO.png").c_str());
+    correctText.setSprite(m_yesTexture);
+    incorrectText.setSprite(m_noTexture);
+    //correctText.setFont(m_font);
 
 
     emptyMover.Transform2D.addChild(&emptySpinner.Transform2D);
@@ -26,7 +28,8 @@ bool aieProject2DTestappApp::startup() {
     emptySpinner.Transform2D.addChild(&incorrectText.Transform2D);
 
 
-
+    emptyMover.Transform2D.translateX(700);
+    emptyMover.Transform2D.translateY(400);
 
 
     return true;

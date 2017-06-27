@@ -35,7 +35,8 @@ public:
 protected:
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
-    aie::Texture*       m_playertexture;
+    aie::Texture*       m_yesTexture;
+    aie::Texture*       m_noTexture;
     std::vector<aie::Texture> texturelist;
 
 };

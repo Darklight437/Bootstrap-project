@@ -108,12 +108,14 @@
     <ClCompile Include="ConsoleManager.cpp" />
     <ClCompile Include="Gameobject.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="State.cpp" />
     <ClCompile Include="Trasnsform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aieProject2DTestappApp.h" />
     <ClInclude Include="ConsoleManager.h" />
     <ClInclude Include="Gameobject.h" />
+    <ClInclude Include="State.h" />
     <ClInclude Include="Trasnsform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

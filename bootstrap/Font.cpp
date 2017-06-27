@@ -67,7 +67,7 @@ Font::Font(const char* trueTypeFontFile, unsigned short fontHeight)
 }
 
 Font::~Font() {
-	delete[] (stbtt_bakedchar*)m_glyphData;
+//	delete[] (stbtt_bakedchar*)m_glyphData;
 
 	glDeleteTextures(1, &m_glHandle);
 	glDeleteBuffers(1, &m_pixelBufferHandle);
