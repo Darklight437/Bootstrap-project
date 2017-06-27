@@ -106,16 +106,26 @@
   <ItemGroup>
     <ClCompile Include="aieProject2DTestappApp.cpp" />
     <ClCompile Include="ConsoleManager.cpp" />
+    <ClCompile Include="CorrectState.cpp" />
     <ClCompile Include="Gameobject.cpp" />
+    <ClCompile Include="GameOverState.cpp" />
+    <ClCompile Include="IncorrectState.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlayState.cpp" />
     <ClCompile Include="State.cpp" />
+    <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="Trasnsform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aieProject2DTestappApp.h" />
     <ClInclude Include="ConsoleManager.h" />
+    <ClInclude Include="CorrectState.h" />
     <ClInclude Include="Gameobject.h" />
+    <ClInclude Include="GameOverState.h" />
+    <ClInclude Include="IncorrectState.h" />
+    <ClInclude Include="PlayState.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="StateManager.h" />
     <ClInclude Include="Trasnsform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
