@@ -3,7 +3,7 @@
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Gameobject.h"
-
+#include "StateManager.h"
 #include "Trasnsform.h"
 #include <string>
 #include <Windows.h>
@@ -33,6 +33,7 @@ public:
 
 
 protected:
+    StateManager*       m_stateManager;
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
     aie::Texture*       m_yesTexture;

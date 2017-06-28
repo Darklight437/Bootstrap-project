@@ -21,7 +21,7 @@ bool aieProject2DTestappApp::startup() {
     correctText.setSprite(m_yesTexture);
     incorrectText.setSprite(m_noTexture);
     //correctText.setFont(m_font);
-
+    m_stateManager = new StateManager;
 
     emptyMover.Transform2D.addChild(&emptySpinner.Transform2D);
     emptySpinner.Transform2D.addChild(&correctText.Transform2D);
@@ -50,7 +50,10 @@ void aieProject2DTestappApp::update(float deltaTime) {
 
     emptySpinner.Transform2D.rotate(4 * deltaTime);
 
-   
+
+    m_stateManager->update();
+
+   /*
     if (input->isKeyDown(aie::INPUT_KEY_Q)){}
 
     if (input->isKeyDown(aie::INPUT_KEY_D)){}
@@ -63,7 +66,7 @@ void aieProject2DTestappApp::update(float deltaTime) {
     
     if (input->isKeyDown(aie::INPUT_KEY_LEFT_SHIFT)){}
 
-    if (input->isKeyDown(aie::INPUT_KEY_LEFT_CONTROL)){}
+    if (input->isKeyDown(aie::INPUT_KEY_LEFT_CONTROL)){}*/
     
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
