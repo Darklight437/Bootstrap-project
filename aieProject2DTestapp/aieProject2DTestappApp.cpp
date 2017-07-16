@@ -23,14 +23,10 @@ bool aieProject2DTestappApp::startup() {
     //correctText.setFont(m_font);
     m_stateManager = new StateManager;
 
-    emptyMover.Transform2D.addChild(&emptySpinner.Transform2D);
-    emptySpinner.Transform2D.addChild(&correctText.Transform2D);
-    emptySpinner.Transform2D.addChild(&incorrectText.Transform2D);
+   
 
 
-    emptyMover.Transform2D.translateX(700);
-    emptyMover.Transform2D.translateY(400);
-
+   
 
     return true;
 }
@@ -48,7 +44,7 @@ void aieProject2DTestappApp::update(float deltaTime) {
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
-    emptySpinner.Transform2D.rotate(4 * deltaTime);
+    //emptySpinner.Transform2D.rotate(4 * deltaTime);
 
 
     m_stateManager->update();
@@ -66,12 +62,13 @@ void aieProject2DTestappApp::update(float deltaTime) {
     
     if (input->isKeyDown(aie::INPUT_KEY_LEFT_SHIFT)){}
 
-    if (input->isKeyDown(aie::INPUT_KEY_LEFT_CONTROL)){}*/
+    if (input->isKeyDown(aie::INPUT_KEY_LEFT_CONTROL)){}
+	*/
     
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
-    emptyMover.Transform2D.UpdateTransform();
+    
     
 
 
@@ -95,13 +92,14 @@ void aieProject2DTestappApp::draw()
 	// begin drawing sprites
 	m_2dRenderer->begin();
 	// draw your stuff here!
-    //call the draw function of the highest object to 
+
     
-    emptyMover.draw(m_2dRenderer);
+	m_stateManager->draw(m_2dRenderer);
+    
 
 
     
-     // done drawing sprites
+     
 
 
     m_2dRenderer->end();

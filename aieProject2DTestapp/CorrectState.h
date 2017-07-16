@@ -7,5 +7,6 @@ public:
     CorrectState();
     ~CorrectState();
     void update();
+	void draw();
 };
 

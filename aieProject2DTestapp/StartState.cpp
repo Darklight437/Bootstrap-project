@@ -10,3 +10,7 @@ StartState::StartState()
 StartState::~StartState()
 {
 }
+
+void StartState::draw()
+{
+}

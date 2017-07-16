@@ -19,8 +19,8 @@ public:
 	virtual void shutdown();
     //list of objects in the game
    
-    Gameobject emptyMover;
-    Gameobject emptySpinner;
+    //Gameobject emptyMover;
+    //Gameobject emptySpinner;
     Gameobject correctText;
     Gameobject incorrectText;
 

@@ -10,3 +10,7 @@ IncorrectState::IncorrectState()
 IncorrectState::~IncorrectState()
 {
 }
+
+void IncorrectState::draw()
+{
+}

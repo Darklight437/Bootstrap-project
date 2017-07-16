@@ -6,5 +6,6 @@ class IncorrectState :
 public:
     IncorrectState();
     ~IncorrectState();
+	void draw();
 };
 

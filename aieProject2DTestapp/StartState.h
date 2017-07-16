@@ -6,5 +6,6 @@ class StartState :
 public:
     StartState();
     ~StartState();
+	void draw();
 };
 

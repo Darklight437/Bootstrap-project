@@ -7,5 +7,6 @@ public:
     GameOverState();
     ~GameOverState();
     void update();
+	void draw();
 };
 

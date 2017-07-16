@@ -10,3 +10,7 @@ PlayState::PlayState()
 PlayState::~PlayState()
 {
 }
+
+void PlayState::draw()
+{
+}
