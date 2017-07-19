@@ -94,7 +94,7 @@ void aieProject2DTestappApp::draw()
 	// draw your stuff here!
 
     
-	m_stateManager->draw(m_2dRenderer);
+	//m_stateManager->draw(m_2dRenderer *);
     
 
 

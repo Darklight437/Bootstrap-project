@@ -18,7 +18,7 @@ void StateManager::update()
 
 
 
-void StateManager::setState(enum states changeto)
+void StateManager::setState()
 {
 
 

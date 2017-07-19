@@ -8,7 +8,7 @@ public:
     StateManager();
     ~StateManager();
     void update();
-    void setState(enum states changeto);
+    void setState();
 	void draw(aie::Renderer2D);
 protected:
     State* m_currState;
