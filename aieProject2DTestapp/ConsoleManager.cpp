@@ -8,11 +8,14 @@ ConsoleManager::ConsoleManager()
 }
 
 
+
 ConsoleManager::~ConsoleManager()
 {
     releaseSharedMemory();
     destroyMutex();
 }
+
+
 
 void ConsoleManager::startup()
 {
@@ -22,6 +25,8 @@ void ConsoleManager::startup()
     
 }
 
+
+
 void ConsoleManager::createMutex()
 {
 
@@ -30,11 +35,15 @@ void ConsoleManager::createMutex()
         throw "CreateMutex failed";
 }
 
+
+
 void ConsoleManager::destroyMutex()
 {
     CloseHandle(g_hMutex);
     g_hMutex = INVALID_HANDLE_VALUE;
 }
+
+
 
 bool ConsoleManager::getMutexOwnership()
 {
@@ -62,11 +71,15 @@ bool ConsoleManager::getMutexOwnership()
 
 }
 
+
+
 void ConsoleManager::releaseMutexOwnership()
 {
     if (!ReleaseMutex(g_hMutex))
         throw "ReleaseMutex failed";
 }
+
+
 
 void ConsoleManager::createSharedMemory(const char * name, unsigned numBytes)
 {
@@ -85,6 +98,8 @@ void ConsoleManager::createSharedMemory(const char * name, unsigned numBytes)
         throw "MapViewOfFile failed";
     }
 }
+
+
 
 void ConsoleManager::releaseSharedMemory()
 {
@@ -107,12 +122,11 @@ void ConsoleManager::releaseSharedMemory()
     }
 }
 
+
+
 ConsoleManager::consoleResults ConsoleManager::run()
 {
     //will play every frame to prevent game hanging
-
-    
-
 
 
     try
@@ -132,11 +146,13 @@ ConsoleManager::consoleResults ConsoleManager::run()
             {
                 console.gotResult = true;
                 console.consoleResult = (bool) g_pSharedMemory;
+                return console;
                 
             }
             else
             {
                 console.gotResult = false;
+                return console;
             }
         }
 
