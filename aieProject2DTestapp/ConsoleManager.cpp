@@ -4,11 +4,21 @@
 
 ConsoleManager::ConsoleManager()
 {
+    startup();
 }
 
 
 ConsoleManager::~ConsoleManager()
 {
+    releaseSharedMemory();
+    destroyMutex();
+}
+
+void ConsoleManager::startup()
+{
+    //set everything that needs to be set up so main can loop
+    createMutex();
+    createSharedMemory("Foo Memory", 10000);
 }
 
 void ConsoleManager::createMutex()
@@ -39,7 +49,7 @@ bool ConsoleManager::getMutexOwnership()
         return false;
 
     case WAIT_ABANDONED:
-        // This means that another process owns the mutx but that process terminated 
+        // This means that another process owns the mutX but that process terminated 
         // without releasing the mutex. It may therefore be in an inconsistent state.
         throw "WaitForSingleObject abandoned";
 
@@ -98,27 +108,30 @@ void ConsoleManager::releaseSharedMemory()
 
 bool ConsoleManager::run()
 {
+    //will play every frame to prevent game hanging
+
+
+
 
     try
     {
 
 
 
-        //create global mutex
-        createMutex();
-
-        //create a global block of shared memory
-        createSharedMemory("Foo Memory", 10000);
-
         //if the consle returns true so will this function
 
 
-        while (!mutexOwned)
+        if (!mutexOwned)
         {
 
             //attempt to get mutex
-            //game will poll here until mutex is owned
-            getMutexOwnership();
+            //check here once per frame
+            if (!getMutexOwnership())
+            {
+
+               
+            }
+            
         }
 
 

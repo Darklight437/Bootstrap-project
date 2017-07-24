@@ -22,6 +22,9 @@ public:
     HANDLE g_hFileMapping = NULL;
     void *g_pSharedMemory = NULL;
     bool mutexOwned = false;
+
+    void startup();
+
     void createMutex();
 
     void destroyMutex();
