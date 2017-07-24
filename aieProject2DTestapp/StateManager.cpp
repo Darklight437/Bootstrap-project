@@ -12,9 +12,9 @@ StateManager::~StateManager()
 {
 }
 
-void StateManager::setState()
+void StateManager::setState(states changeTo)
 {
-    switch (switch_on)
+    switch (changeTo)
     {
     default:
         break;
