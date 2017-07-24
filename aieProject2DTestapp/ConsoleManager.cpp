@@ -19,6 +19,7 @@ void ConsoleManager::startup()
     //set everything that needs to be set up so main can loop
     createMutex();
     createSharedMemory("Foo Memory", 10000);
+    
 }
 
 void ConsoleManager::createMutex()
@@ -106,10 +107,11 @@ void ConsoleManager::releaseSharedMemory()
     }
 }
 
-bool ConsoleManager::run()
+ConsoleManager::consoleResults ConsoleManager::run()
 {
     //will play every frame to prevent game hanging
 
+    
 
 
 
@@ -126,12 +128,16 @@ bool ConsoleManager::run()
 
             //attempt to get mutex
             //check here once per frame
-            if (!getMutexOwnership())
+            if (getMutexOwnership())
             {
-
-               
+                console.gotResult = true;
+                console.consoleResult = (bool) g_pSharedMemory;
+                
             }
-            
+            else
+            {
+                console.gotResult = false;
+            }
         }
 
 

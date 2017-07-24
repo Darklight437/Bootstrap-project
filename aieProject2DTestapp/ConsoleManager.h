@@ -16,7 +16,12 @@ public:
     ConsoleManager();
     ~ConsoleManager();
 
-
+    struct consoleResults
+    {
+        bool gotResult = false;
+        bool consoleResult = false;
+    } console;
+    
 
     HANDLE g_hMutex = INVALID_HANDLE_VALUE;
     HANDLE g_hFileMapping = NULL;
@@ -37,7 +42,7 @@ public:
 
     void releaseSharedMemory();
 
-    bool run();
+    consoleResults run();
 
 
 
