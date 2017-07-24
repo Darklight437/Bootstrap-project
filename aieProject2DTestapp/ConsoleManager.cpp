@@ -123,7 +123,7 @@ void ConsoleManager::releaseSharedMemory()
 }
 
 
-
+//call in update
 ConsoleManager::consoleResults ConsoleManager::run()
 {
     //will play every frame to prevent game hanging
@@ -141,7 +141,7 @@ ConsoleManager::consoleResults ConsoleManager::run()
         {
 
             //attempt to get mutex
-            //check here once per frame
+            
             if (getMutexOwnership())
             {
                 console.gotResult = true;
