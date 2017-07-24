@@ -2,6 +2,7 @@
 
 
 
+
 StateManager::StateManager()
 {
 }
@@ -11,19 +12,24 @@ StateManager::~StateManager()
 {
 }
 
+void StateManager::setState()
+{
+    switch (switch_on)
+    {
+    default:
+        break;
+    }
+
+    //change to the state
+}
+
+
 void StateManager::update()
 {
     m_currState->update();
 }
 
 
-
-void StateManager::setState()
-{
-
-
-    //change to the state
-}
 
 void StateManager::draw(aie::Renderer2D currentrenderer)
 {

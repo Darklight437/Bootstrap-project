@@ -2,6 +2,9 @@
 #include "State.h"
 #include "Renderer2D.h"
 #include <Vector>
+
+enum States { correct, incorrect, play, gameOver, start };
+
 class StateManager
 {
 public:
@@ -12,5 +15,6 @@ public:
 	void draw(aie::Renderer2D);
 protected:
     State* m_currState;
+    std::vector<State> stateVect;
 };
 
