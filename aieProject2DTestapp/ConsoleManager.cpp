@@ -96,13 +96,36 @@ void ConsoleManager::releaseSharedMemory()
     }
 }
 
-void ConsoleManager::run()
+bool ConsoleManager::run()
 {
 
-
-    while (true)
+    try
     {
 
-        //attempt to get mutex
+
+
+        //create global mutex
+        createMutex();
+
+        //create a global block of shared memory
+        createSharedMemory("Foo Memory", 10000);
+
+        //if the consle returns true so will this function
+
+
+        while (!mutexOwned)
+        {
+
+            //attempt to get mutex
+            //game will poll here until mutex is owned
+            getMutexOwnership();
+        }
+
+
     }
+    catch (const char *e)
+    {
+        system("pause");
+    }
+
 }

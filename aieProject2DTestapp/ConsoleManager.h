@@ -21,7 +21,7 @@ public:
     HANDLE g_hMutex = INVALID_HANDLE_VALUE;
     HANDLE g_hFileMapping = NULL;
     void *g_pSharedMemory = NULL;
-
+    bool mutexOwned = false;
     void createMutex();
 
     void destroyMutex();
@@ -34,7 +34,7 @@ public:
 
     void releaseSharedMemory();
 
-    void run();
+    bool run();
 
 
 
