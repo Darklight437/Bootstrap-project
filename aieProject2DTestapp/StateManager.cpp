@@ -59,16 +59,16 @@ void StateManager::setState(States changeTo)
 }
 
 
-void StateManager::update()
+void StateManager::update(float deltatime)
 {
-    m_currState->update();
+    m_currState->update(deltatime);
 }
 
 
 
-void StateManager::draw(aie::Renderer2D currentrenderer)
+void StateManager::draw()
 {
-	m_currState->draw(currentrenderer);
+	m_currState->draw();
 }
 
 State * StateManager::findState(States toFind)

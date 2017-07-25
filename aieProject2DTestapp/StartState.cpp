@@ -11,14 +11,13 @@ StartState::~StartState()
 {
 }
 
-void StartState::draw(aie::Renderer2D renderer)
+void StartState::draw()
 {
     //white screen
     //write some text saying to press a key to begin
 }
 
-void StartState::update()
+void StartState::update(float deltaTime)
 {
-
-    //wait for an input to start the game
 }
+

@@ -13,9 +13,11 @@ PlayState::~PlayState()
 
 void PlayState::draw(aie::Renderer2D renderer)
 {
+
 }
 
 void PlayState::update(float deltaTime)
 {
-    //check again each frame for console true input
+    //check each frame for console true input
+    
 }

@@ -18,10 +18,11 @@ public:
     ~StateManager();
     void update(float deltaTime);
     void setState(States changeTo);
-	void draw(aie::Renderer2D);
+	void draw();
     State* findState(States findstate);
 protected:
     State* m_currState;
     std::vector<State*> stateVect;
+    aie::Renderer2D* renderEngine;
 };
 
