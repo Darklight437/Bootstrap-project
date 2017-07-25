@@ -7,5 +7,6 @@ public:
     IncorrectState();
     ~IncorrectState();
 	void draw();
+    void update(float deltaTime);
 };
 

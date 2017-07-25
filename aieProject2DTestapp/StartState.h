@@ -7,6 +7,6 @@ public:
     StartState();
     ~StartState();
 	void draw(aie::Renderer2D renderer);
-    void update();
+    void update(float deltaTime);
 };
 

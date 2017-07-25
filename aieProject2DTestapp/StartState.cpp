@@ -19,5 +19,6 @@ void StartState::draw(aie::Renderer2D renderer)
 
 void StartState::update()
 {
+
     //wait for an input to start the game
 }

@@ -14,3 +14,7 @@ IncorrectState::~IncorrectState()
 void IncorrectState::draw()
 {
 }
+
+void IncorrectState::update(float deltaTime)
+{
+}

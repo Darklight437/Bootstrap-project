@@ -16,7 +16,7 @@ class StateManager
 public:
     StateManager();
     ~StateManager();
-    void update();
+    void update(float deltaTime);
     void setState(States changeTo);
 	void draw(aie::Renderer2D);
     State* findState(States findstate);
