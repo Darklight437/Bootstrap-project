@@ -3,7 +3,6 @@
 
 #include "Renderer2D.h"
 
-enum class states {initState, correctState, incorrectState, endState };
 class State
 {
 public:
