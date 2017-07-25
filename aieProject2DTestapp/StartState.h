@@ -6,6 +6,7 @@ class StartState :
 public:
     StartState();
     ~StartState();
-	void draw();
+	void draw(aie::Renderer2D renderer);
+    void update();
 };
 

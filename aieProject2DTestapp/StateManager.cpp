@@ -6,7 +6,17 @@
 StateManager::StateManager()
 {
     //create one of each state here and store a pointer of it in the vector
+    State* p_startState = new StartState;
+    stateVect.push_back(p_startState);
 
+    State* p_playState = new PlayState;
+    stateVect.push_back(p_playState);
+
+    State* p_correctState = new CorrectState;
+    stateVect.push_back(p_correctState);
+
+    State* p_incorrectState = new IncorrectState;
+    stateVect.push_back(p_incorrectState);
 
 }
 
