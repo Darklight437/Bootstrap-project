@@ -7,7 +7,6 @@ public:
 	//main state of gameplay
     PlayState();
     ~PlayState();
-	void draw(aie::Renderer2D);
-    void update(float deltaTime);
+
 };
 

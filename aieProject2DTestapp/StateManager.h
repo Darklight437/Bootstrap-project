@@ -16,9 +16,8 @@ class StateManager
 public:
     StateManager();
     ~StateManager();
-    void update(float deltaTime);
     void setState(States changeTo);
-	void draw();
+
     State* findState(States findstate);
 protected:
     State* m_currState;

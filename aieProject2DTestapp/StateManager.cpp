@@ -34,7 +34,7 @@ void StateManager::setState(States changeTo)
         // learn how to do this again
         //iterate through the vector till you find the stored state that corresponds to this state
 
-
+        m_currState = findState(States::START);
 
         break;
 
@@ -59,19 +59,8 @@ void StateManager::setState(States changeTo)
 }
 
 
-void StateManager::update(float deltatime)
-{
-    m_currState->update(deltatime);
-}
 
-
-
-void StateManager::draw()
-{
-	m_currState->draw();
-}
-
-State * StateManager::findState(States toFind)
+State * StateManager::findState(States findstate)
 {
 
         

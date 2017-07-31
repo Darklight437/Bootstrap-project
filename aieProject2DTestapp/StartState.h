@@ -6,7 +6,6 @@ class StartState :
 public:
     StartState();
     ~StartState();
-	void draw();
-    void update(float deltaTime);
+;
 };
 
