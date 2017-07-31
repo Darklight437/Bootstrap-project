@@ -47,7 +47,7 @@ void aieProject2DTestappApp::update(float deltaTime) {
     //emptySpinner.Transform2D.rotate(4 * deltaTime);
 
 
-    m_stateManager->update(float deltaTime);
+    m_stateManager->update(deltaTime);
 
    /*
     if (input->isKeyDown(aie::INPUT_KEY_Q)){}
