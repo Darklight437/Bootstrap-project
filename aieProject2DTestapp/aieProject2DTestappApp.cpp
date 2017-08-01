@@ -4,6 +4,7 @@
 #include "Font.h"
 #include "Input.h"
 #include "Matrix3.h"
+#include "ConsoleManager.h"
 
 
 #define OBJECTTRANSFORM m_Gameobject.Transform2D
@@ -62,28 +63,14 @@ void aieProject2DTestappApp::update(float deltaTime) {
     {
         m_currentState = m_stateManager->getState();
     }
-
+    //spin forever
     m_currentState->OBJECTTRANSFORM.rotate(3 * deltaTime);
     
 
    
-    if (input->isKeyDown(aie::INPUT_KEY_Q)){}
+   
 
-    if (input->isKeyDown(aie::INPUT_KEY_ENTER))
-    {
-        if (m_currentState->ID == StateManager::States::CORRECT)
-        {
-            m_stateManager->setState(StateManager::States::INCORRECT);
-            
-        }
-        else
-        {
-            m_stateManager->setState(StateManager::States::CORRECT);
-            
-        }
-
-
-    }
+    
 
     m_currentState->OBJECTTRANSFORM.UpdateTransform();
     
