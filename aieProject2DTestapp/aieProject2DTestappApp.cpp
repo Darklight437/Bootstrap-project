@@ -52,6 +52,7 @@ void aieProject2DTestappApp::update(float deltaTime) {
         currentState = m_stateManager->getState();
     }
 
+    currentState->update();
 
    /*
     if (input->isKeyDown(aie::INPUT_KEY_Q)){}

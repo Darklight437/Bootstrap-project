@@ -7,5 +7,7 @@ public:
     CorrectState();
     ~CorrectState();
     void update();
+
+
 };
 
