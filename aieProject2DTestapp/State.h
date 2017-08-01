@@ -17,9 +17,10 @@ public:
     virtual ~State();
     virtual void update() = 0;
     std::string getExecutableFolder() const;
+    Gameobject m_Gameobject;
 
 protected:
-    Gameobject m_Gameobject;
+    
     aie::Texture* m_texture;
     aie::Texture* correctSprite;
     aie::Texture* inCorrectSprite;

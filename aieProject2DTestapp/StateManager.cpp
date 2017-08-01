@@ -28,7 +28,8 @@ StateManager::StateManager()
 
 StateManager::~StateManager()
 {
-    
+    std::vector<State*>::iterator It;
+
 }
 
 void StateManager::setState(States changeTo)
@@ -55,10 +56,12 @@ void StateManager::setState(States changeTo)
 
     case States::GAMEOVER:
         m_currState = findState(States::GAMEOVER);
+
         break;
 
 
     default:
+         
         //an error lives here
         break;
     }
@@ -73,9 +76,11 @@ State* StateManager::getState()
 
 
 
-State * StateManager::findState(States findstate)
+State* StateManager::findState(States findstate)
 {
     std::vector<State*>::iterator It;
+    
+
         for (It  = stateVect.begin(); It != stateVect.end(); It++)
         {
             if ((*It)->ID == findstate)
@@ -83,9 +88,11 @@ State * StateManager::findState(States findstate)
                 break;
             }
         }
-    {
-
-    }
+        if (It != stateVect.end())
+        {
+            return *It;
+        }
+        
         
     return nullptr;
 }
