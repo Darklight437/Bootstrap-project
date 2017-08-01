@@ -43,7 +43,7 @@ void aieProject2DTestappApp::shutdown()
 	
 	delete m_2dRenderer;
     delete m_stateManager;
-//    delete m_texture;
+
     
 }
 
@@ -57,7 +57,6 @@ void aieProject2DTestappApp::update(float deltaTime) {
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
-    //emptySpinner.Transform2D.rotate(4 * deltaTime);
 
     if (m_stateManager->getState() != nullptr)
     {
@@ -65,23 +64,28 @@ void aieProject2DTestappApp::update(float deltaTime) {
     }
 
     m_currentState->OBJECTTRANSFORM.rotate(3 * deltaTime);
-    m_currentState->OBJECTTRANSFORM.UpdateTransform();
+    
 
-   /*
+   
     if (input->isKeyDown(aie::INPUT_KEY_Q)){}
 
-    if (input->isKeyDown(aie::INPUT_KEY_D)){}
+    if (input->isKeyDown(aie::INPUT_KEY_ENTER))
+    {
+        if (m_currentState->ID == StateManager::States::CORRECT)
+        {
+            m_stateManager->setState(StateManager::States::INCORRECT);
+            
+        }
+        else
+        {
+            m_stateManager->setState(StateManager::States::CORRECT);
+            
+        }
 
-    if (input->isKeyDown(aie::INPUT_KEY_A)){}
 
-    if (input->isKeyDown(aie::INPUT_KEY_W)){}
+    }
 
-    if (input->isKeyDown(aie::INPUT_KEY_S)){}
-    
-    if (input->isKeyDown(aie::INPUT_KEY_LEFT_SHIFT)){}
-
-    if (input->isKeyDown(aie::INPUT_KEY_LEFT_CONTROL)){}
-	*/
+    m_currentState->OBJECTTRANSFORM.UpdateTransform();
     
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
