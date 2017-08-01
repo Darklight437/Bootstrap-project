@@ -18,6 +18,7 @@ StateManager::StateManager()
     State* p_incorrectState = new IncorrectState;
     stateVect.push_back(p_incorrectState);
 
+    m_currState = nullptr;
 }
 
 
@@ -59,9 +60,9 @@ void StateManager::setState(States changeTo)
     //change to the state
 }
 
-State StateManager::getState()
+State* StateManager::getState()
 {
-    return *m_currState;
+    return m_currState;
 }
 
 

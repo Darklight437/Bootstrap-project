@@ -41,12 +41,16 @@ void aieProject2DTestappApp::shutdown() {
 
 void aieProject2DTestappApp::update(float deltaTime) {
 
+    State* currentState;
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
     //emptySpinner.Transform2D.rotate(4 * deltaTime);
 
-    m_stateManager->getState();
+    if (m_stateManager->getState() != nullptr)
+    {
+        currentState = m_stateManager->getState();
+    }
 
 
    /*
