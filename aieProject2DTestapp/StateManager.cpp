@@ -30,10 +30,10 @@ StateManager::~StateManager()
 {
     std::vector<State*>::iterator It;
 
-    //for (It = stateVect.begin(); It != stateVect.end; It++)
-    //{
-    //    //iterate and delete all the classes
-    //}
+    for (It = stateVect.begin(); It != stateVect.end(); It++)
+    {
+        delete *It;
+    }
 }
 
 void StateManager::setState(States changeTo)

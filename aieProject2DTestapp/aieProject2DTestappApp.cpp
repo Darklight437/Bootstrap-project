@@ -19,16 +19,16 @@ aieProject2DTestappApp::~aieProject2DTestappApp() {
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-bool aieProject2DTestappApp::startup() {
+bool aieProject2DTestappApp::startup() 
+{
 
 
     
 	m_2dRenderer = new aie::Renderer2D();
-	//m_font = new aie::Font((getExecutableFolder() +"/font/consolas.ttf").c_str(), 32);
     m_stateManager = new StateManager;
 
     m_stateManager->setState(StateManager::States::CORRECT);
-
+    
 
     return true;
 }
@@ -37,10 +37,12 @@ bool aieProject2DTestappApp::startup() {
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-void aieProject2DTestappApp::shutdown() {
+void aieProject2DTestappApp::shutdown() 
+{
 
-	delete m_font;
+	
 	delete m_2dRenderer;
+    delete m_stateManager;
 //    delete m_texture;
     
 }
@@ -51,7 +53,7 @@ void aieProject2DTestappApp::shutdown() {
 
 void aieProject2DTestappApp::update(float deltaTime) {
 
-    State* currentState;
+    
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
@@ -59,12 +61,11 @@ void aieProject2DTestappApp::update(float deltaTime) {
 
     if (m_stateManager->getState() != nullptr)
     {
-        currentState = m_stateManager->getState();
+        m_currentState = m_stateManager->getState();
     }
 
-    currentState->OBJECTTRANSFORM.rotate(1);
-    currentState->OBJECTTRANSFORM.update(deltaTime);
-
+    m_currentState->OBJECTTRANSFORM.rotate(3 * deltaTime);
+    m_currentState->OBJECTTRANSFORM.UpdateTransform();
 
    /*
     if (input->isKeyDown(aie::INPUT_KEY_Q)){}

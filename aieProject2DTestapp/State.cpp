@@ -11,8 +11,8 @@ State::State()
 
 State::~State()
 {
-    delete &correctSprite;
-    delete &inCorrectSprite;
+    delete correctSprite;
+    delete inCorrectSprite;
 }
 
 std::string State::getExecutableFolder() const
