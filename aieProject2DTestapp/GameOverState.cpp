@@ -4,6 +4,7 @@
 
 GameOverState::GameOverState()
 {
+    ID = StateManager::States::GAMEOVER;
 }
 
 

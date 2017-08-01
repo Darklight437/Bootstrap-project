@@ -1,19 +1,18 @@
 #pragma once
-#include "State.h"
-#include "StartState.h"
-#include "PlayState.h"
-#include "CorrectState.h"
-#include "IncorrectState.h"
-#include "GameOverState.h"
+
+
 #include "Renderer2D.h"
 #include <Vector>
 #include <algorithm>
 
-enum class States { CORRECT, INCORRECT, PLAY, GAMEOVER, START };
+class State;
 
 class StateManager
 {
 public:
+
+    enum class States { CORRECT, INCORRECT, PLAY, GAMEOVER, START };
+
     StateManager();
     ~StateManager();
     void setState(States changeTo);

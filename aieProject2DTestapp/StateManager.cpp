@@ -1,6 +1,10 @@
 #include "StateManager.h"
-
-
+#include "State.h"
+#include "StartState.h"
+#include "PlayState.h"
+#include "CorrectState.h"
+#include "IncorrectState.h"
+#include "GameOverState.h"
 
 
 StateManager::StateManager()
@@ -33,31 +37,33 @@ void StateManager::setState(States changeTo)
     {
 
     case States::START:
-        // learn how to do this again
-        //iterate through the vector till you find the stored state that corresponds to this state
-
+        
         m_currState = findState(States::START);
-
         break;
 
     case States::PLAY:
+        m_currState = findState(States::PLAY);
         break;
 
-    case::States::CORRECT:
+    case States::CORRECT:
+        m_currState = findState(States::CORRECT);
         break;
 
     case States::INCORRECT:
+        m_currState = findState(States::INCORRECT);
         break;
 
     case States::GAMEOVER:
+        m_currState = findState(States::GAMEOVER);
         break;
 
 
     default:
+        //an error lives here
         break;
     }
 
-    //change to the state
+
 }
 
 State* StateManager::getState()
@@ -69,7 +75,17 @@ State* StateManager::getState()
 
 State * StateManager::findState(States findstate)
 {
+    std::vector<State*>::iterator It;
+        for (It  = stateVect.begin(); It != stateVect.end(); It++)
+        {
+            if ((*It)->ID == findstate)
+            {
+                break;
+            }
+        }
+    {
 
+    }
         
     return nullptr;
 }

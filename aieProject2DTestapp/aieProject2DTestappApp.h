@@ -17,19 +17,11 @@ public:
 
 	virtual bool startup();
 	virtual void shutdown();
-    //list of objects in the game
-   
-    //Gameobject emptyMover;
-    //Gameobject emptySpinner;
-    Gameobject correctText;
-    Gameobject incorrectText;
 
-
-
+    //core gameloop functions
 	virtual void update(float deltaTime);
 	virtual void draw();
 
-    std::string getExecutableFolder() const;
 
 
 protected:

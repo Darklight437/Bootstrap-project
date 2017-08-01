@@ -1,4 +1,5 @@
 #include "aieProject2DTestappApp.h"
+#include "State.h"
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
@@ -16,11 +17,6 @@ bool aieProject2DTestappApp::startup() {
     
 	m_2dRenderer = new aie::Renderer2D();
 	//m_font = new aie::Font((getExecutableFolder() +"/font/consolas.ttf").c_str(), 32);
-    m_yesTexture = new aie::Texture((getExecutableFolder() +"/textures/YES.png").c_str());
-    m_noTexture = new aie::Texture((getExecutableFolder() + "/textures/NO.png").c_str());
-    correctText.setSprite(m_yesTexture);
-    incorrectText.setSprite(m_noTexture);
-    //correctText.setFont(m_font);
     m_stateManager = new StateManager;
 
    
@@ -99,7 +95,7 @@ void aieProject2DTestappApp::draw()
 	// draw your stuff here!
 
     
-	//m_stateManager->draw(m_2dRenderer *);
+	
     
 
 

@@ -4,6 +4,7 @@
 
 PlayState::PlayState()
 {
+    ID = StateManager::States::PLAY;
 }
 
 

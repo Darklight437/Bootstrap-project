@@ -5,11 +5,14 @@
 #include "Gameobject.h"
 #include <Texture.h>
 #include <Windows.h>
+#include "StateManager.h"
 
+    
 class State
 {
 public:
-    
+    StateManager::States ID;
+   
     State();
     virtual ~State();
     virtual void update() = 0;

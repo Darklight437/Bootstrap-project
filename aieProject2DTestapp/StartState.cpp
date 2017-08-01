@@ -4,6 +4,7 @@
 
 StartState::StartState()
 {
+    ID = StateManager::States::START;
 }
 
 

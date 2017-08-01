@@ -4,6 +4,9 @@
 
 IncorrectState::IncorrectState()
 {
+    m_texture = inCorrectSprite;
+    m_Gameobject.setSprite(m_texture);
+    ID = StateManager::States::INCORRECT;
 }
 
 
