@@ -6,6 +6,6 @@ class IncorrectState :
 public:
     IncorrectState();
     ~IncorrectState();
-
+    void update();
 };
 

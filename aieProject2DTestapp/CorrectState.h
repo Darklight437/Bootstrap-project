@@ -6,6 +6,6 @@ class CorrectState :
 public:
     CorrectState();
     ~CorrectState();
-
+    void update();
 };
 

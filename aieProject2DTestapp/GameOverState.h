@@ -6,6 +6,6 @@ class GameOverState :
 public:
     GameOverState();
     ~GameOverState();
-
+    void update();
 };
 

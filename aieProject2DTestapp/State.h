@@ -9,7 +9,7 @@ public:
     
     State();
     virtual ~State();
-
+    virtual void update() = 0;
 
 
 };

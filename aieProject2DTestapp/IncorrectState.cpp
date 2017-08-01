@@ -11,4 +11,8 @@ IncorrectState::~IncorrectState()
 {
 }
 
+void IncorrectState::update()
+{
+}
+
 

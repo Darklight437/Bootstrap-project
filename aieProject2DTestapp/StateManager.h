@@ -17,6 +17,7 @@ public:
     StateManager();
     ~StateManager();
     void setState(States changeTo);
+    State getState();
 
     State* findState(States findstate);
 protected:

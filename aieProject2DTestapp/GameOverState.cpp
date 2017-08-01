@@ -11,5 +11,9 @@ GameOverState::~GameOverState()
 {
 }
 
+void GameOverState::update()
+{
+}
+
 
 

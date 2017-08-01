@@ -6,6 +6,6 @@ class StartState :
 public:
     StartState();
     ~StartState();
-;
+    void update();
 };
 

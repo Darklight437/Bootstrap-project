@@ -7,6 +7,6 @@ public:
 	//main state of gameplay
     PlayState();
     ~PlayState();
-
+    void update();
 };
 

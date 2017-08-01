@@ -11,4 +11,8 @@ PlayState::~PlayState()
 {
 }
 
+void PlayState::update()
+{
+}
+
 

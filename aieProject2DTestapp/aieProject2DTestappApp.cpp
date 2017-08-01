@@ -46,7 +46,7 @@ void aieProject2DTestappApp::update(float deltaTime) {
 
     //emptySpinner.Transform2D.rotate(4 * deltaTime);
 
-
+    m_stateManager->getState();
 
 
    /*

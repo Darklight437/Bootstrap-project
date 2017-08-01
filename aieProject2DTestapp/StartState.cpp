@@ -11,4 +11,8 @@ StartState::~StartState()
 {
 }
 
+void StartState::update()
+{
+}
+
 

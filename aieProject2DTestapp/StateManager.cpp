@@ -23,6 +23,7 @@ StateManager::StateManager()
 
 StateManager::~StateManager()
 {
+    
 }
 
 void StateManager::setState(States changeTo)
@@ -56,6 +57,11 @@ void StateManager::setState(States changeTo)
     }
 
     //change to the state
+}
+
+State StateManager::getState()
+{
+    return *m_currState;
 }
 
 
