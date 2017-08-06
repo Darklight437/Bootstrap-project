@@ -110,11 +110,30 @@ void releaseSharedMemory()
     }
 }
 
-void gameloopQuestionnaire()
+bool gameloopQuestionnaire()
 {
+    int input;
     std::cout << "=======================================================";
     std::cout << "WELCOME TO THE WONDEROUS QUESTIONNAIRE!";
     std::cout << "=======================================================";
+
+
+    std::cout << "awnser 1 to prove the game isnt broken or dont, i'm just a console not a cop";
+    std::cin >> input;
+
+    switch (input)
+    {
+
+    case 1:
+        
+
+
+
+    default:
+        break;
+    }
+
+
 }
 
 
