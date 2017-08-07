@@ -9,7 +9,7 @@
 HANDLE g_hMutex = INVALID_HANDLE_VALUE; //this is a win32 mutex oject essentially a key that is traded between multiple processes (this applies to multi-threading too)
 HANDLE g_hFileMapping = NULL;           //a handle to a memory-wrapped file object, i.e. shared memory
 void *g_pSharedMemory = NULL;           //A pointer to a block of shared memory backed by a memory wrapped file
-
+bool g_HasMustex = false;
 void createMutex()
 {
     g_hMutex = CreateMutex(NULL, FALSE, "Mutex_Alpha");
@@ -38,6 +38,7 @@ bool getMutexOwnership()
     {
     case WAIT_OBJECT_0:
         //mutex is owned by this object
+        g_HasMustex = true;
         return true;
 
     case WAIT_TIMEOUT:
@@ -118,7 +119,7 @@ bool gameloopQuestionnaire()
     std::cout << "=======================================================";
 
 
-    std::cout << "awnser 1 to prove the game isnt broken or dont, i'm just a console not a cop";
+    std::cout << "answer 1 to prove the game isnt broken or dont, i'm just a console not a cop";
     std::cin >> input;
 
     switch (input)
@@ -127,6 +128,7 @@ bool gameloopQuestionnaire()
     case 1:
     {
         std::cout << "heyy everything is working as intended right main screen?";
+        *((LPDWORD)g_pSharedMemory) = true;
         return true;
     }
 
@@ -155,11 +157,18 @@ int main()
         //the bool will setermine if the awnser was correct or not
         //ask a bunch of binary question with either 2 option multiple choice or yes or no questions
         createSharedMemory("yesNo Memory", 1000);
-        getMutexOwnership();
-
-        bool tempBool = gameloopQuestionnaire();
         
+        while (getMutexOwnership())
+        {
+            if (gameloopQuestionnaire())
+            {
+                releaseMutexOwnership();
+                break;
+            }
 
+
+
+        }
 
 
 
