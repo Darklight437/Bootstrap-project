@@ -125,13 +125,19 @@ bool gameloopQuestionnaire()
     {
 
     case 1:
-        
+    {
+        std::cout << "heyy everything is working as intended right main screen?";
+        return true;
+    }
 
 
 
     default:
-        break;
+    {
+        std::cout << "invalid input this probably broke something";
+        return false;
     }
+}
 
 
 }
@@ -148,9 +154,11 @@ int main()
         //other process will poll for mutex when it recieves it it will read a shared memory block that has one bool
         //the bool will setermine if the awnser was correct or not
         //ask a bunch of binary question with either 2 option multiple choice or yes or no questions
-        createSharedMemory("yesNo Memory", 10);
+        createSharedMemory("yesNo Memory", 1000);
+        getMutexOwnership();
 
-        gameloopQuestionnaire();
+        bool tempBool = gameloopQuestionnaire();
+        
 
 
 
