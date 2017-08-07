@@ -13,9 +13,7 @@
 
 aieProject2DTestappApp::aieProject2DTestappApp() {}
 
-aieProject2DTestappApp::~aieProject2DTestappApp() {
-
-}
+aieProject2DTestappApp::~aieProject2DTestappApp() {}
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -53,7 +51,8 @@ void aieProject2DTestappApp::shutdown()
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-void aieProject2DTestappApp::update(float deltaTime) {
+void aieProject2DTestappApp::update(float deltaTime)
+{
 
     
 	// input example
@@ -74,6 +73,8 @@ void aieProject2DTestappApp::update(float deltaTime) {
         m_stateManager->setState(StateManager::States::PLAY);
     }
     
+
+
     if (m_currentState->ID == StateManager::States::PLAY)
     {
         if (m_Console->console.gotResult)
@@ -87,11 +88,6 @@ void aieProject2DTestappApp::update(float deltaTime) {
                 m_stateManager->setState(INCORRECTST);
             }
         }
-        else
-        {
-
-        }
-        
     }
 
    
