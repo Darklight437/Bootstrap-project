@@ -121,6 +121,7 @@ bool gameloopQuestionnaire()
     std::cout << "=======================================================\n\n";
 
 
+    std::cout << "answer 1 to prove the game isnt broken. \nOr don't i'm just a console not a cop\n\n";
     std::cin >> input;
 
     switch (input)
@@ -128,6 +129,7 @@ bool gameloopQuestionnaire()
 
     case 1:
     {
+        std::cout << "\nheyy everything is working as intended right main screen?\n";
         *((LPDWORD)g_pSharedMemory) = true;
         return true;
     }
@@ -136,6 +138,7 @@ bool gameloopQuestionnaire()
 
     default:
     {
+        std::cout << "\ninvalid input this probably broke something\n";
         *((LPDWORD)g_pSharedMemory) = false;
         return false;
     }
