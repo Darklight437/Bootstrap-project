@@ -10,6 +10,8 @@ HANDLE g_hMutex = INVALID_HANDLE_VALUE; //this is a win32 mutex oject essentiall
 HANDLE g_hFileMapping = NULL;           //a handle to a memory-wrapped file object, i.e. shared memory
 void *g_pSharedMemory = NULL;           //A pointer to a block of shared memory backed by a memory wrapped file
 bool g_HasMustex = false;
+
+
 void createMutex()
 {
     g_hMutex = CreateMutex(NULL, FALSE, "Mutex_Alpha");
@@ -137,6 +139,7 @@ bool gameloopQuestionnaire()
     default:
     {
         std::cout << "invalid input this probably broke something";
+        *((LPDWORD)g_pSharedMemory) = false;
         return false;
     }
 }

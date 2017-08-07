@@ -27,6 +27,7 @@ public:
 protected:
     State*              m_currentState;
     StateManager*       m_stateManager;
+    ConsoleManager*     m_Console;
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
     aie::Texture*       m_yesTexture;

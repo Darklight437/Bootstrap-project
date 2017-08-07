@@ -27,7 +27,7 @@ bool aieProject2DTestappApp::startup()
     
 	m_2dRenderer = new aie::Renderer2D();
     m_stateManager = new StateManager;
-
+    m_Console = new ConsoleManager;
     m_stateManager->setState(StateManager::States::CORRECT);
     
 
@@ -44,7 +44,7 @@ void aieProject2DTestappApp::shutdown()
 	
 	delete m_2dRenderer;
     delete m_stateManager;
-
+    delete m_Console;
     
 }
 

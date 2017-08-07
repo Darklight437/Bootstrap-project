@@ -21,7 +21,7 @@ void ConsoleManager::startup()
 {
     //set everything that needs to be set up so main can loop
     createMutex();
-    createSharedMemory("Foo Memory", 10000);
+    createSharedMemory("yesNo Memory", 1000);
     
 }
 

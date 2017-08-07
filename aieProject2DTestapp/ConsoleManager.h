@@ -28,7 +28,13 @@ public:
     void *g_pSharedMemory = NULL;
     bool mutexOwned = false;
 
+
+
     void startup();
+    consoleResults run();
+private:
+
+    
 
     void createMutex();
 
@@ -42,7 +48,7 @@ public:
 
     void releaseSharedMemory();
 
-    consoleResults run();
+    
 
 
 
