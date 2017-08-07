@@ -116,12 +116,11 @@ void releaseSharedMemory()
 bool gameloopQuestionnaire()
 {
     int input;
-    std::cout << "=======================================================";
-    std::cout << "WELCOME TO THE WONDEROUS QUESTIONNAIRE!";
-    std::cout << "=======================================================";
+    std::cout << "=======================================================\n";
+    std::cout << "WELCOME TO THE WONDEROUS QUESTIONNAIRE!\n";
+    std::cout << "=======================================================\n\n";
 
 
-    std::cout << "answer 1 to prove the game isnt broken or dont, i'm just a console not a cop";
     std::cin >> input;
 
     switch (input)
@@ -129,7 +128,6 @@ bool gameloopQuestionnaire()
 
     case 1:
     {
-        std::cout << "heyy everything is working as intended right main screen?";
         *((LPDWORD)g_pSharedMemory) = true;
         return true;
     }
@@ -138,7 +136,6 @@ bool gameloopQuestionnaire()
 
     default:
     {
-        std::cout << "invalid input this probably broke something";
         *((LPDWORD)g_pSharedMemory) = false;
         return false;
     }
@@ -160,7 +157,7 @@ int main()
         //the bool will setermine if the awnser was correct or not
         //ask a bunch of binary question with either 2 option multiple choice or yes or no questions
         createSharedMemory("yesNo Memory", 1000);
-        
+        createMutex();
         while (getMutexOwnership())
         {
             if (gameloopQuestionnaire())
