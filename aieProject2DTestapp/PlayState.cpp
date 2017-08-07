@@ -14,6 +14,9 @@ PlayState::~PlayState()
 
 void PlayState::update()
 {
+    //call for the mutex
+
+
 }
 
 

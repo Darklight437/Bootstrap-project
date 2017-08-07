@@ -28,8 +28,8 @@ bool aieProject2DTestappApp::startup()
 	m_2dRenderer = new aie::Renderer2D();
     m_stateManager = new StateManager;
     m_Console = new ConsoleManager;
-    m_stateManager->setState(StateManager::States::CORRECT);
-    
+    m_stateManager->setState(StateManager::States::START);
+    m_Console->startup();
 
     return true;
 }
@@ -63,9 +63,20 @@ void aieProject2DTestappApp::update(float deltaTime) {
     {
         m_currentState = m_stateManager->getState();
     }
-    //spin forever
-    m_currentState->OBJECTTRANSFORM.rotate(3 * deltaTime);
+    if (m_currentState->ID == StateManager::States::CORRECT || m_currentState->ID == StateManager::States::INCORRECT)
+    {
+        //spin forever
+        m_currentState->OBJECTTRANSFORM.rotate(3 * deltaTime);
+    }
+    if (input->isKeyDown(aie::INPUT_KEY_ENTER) && m_currentState->ID == StateManager::States::START)
+    {
+        m_stateManager->setState(StateManager::States::PLAY);
+    }
     
+    if (m_currentState->ID == StateManager::States::PLAY)
+    {
+        m_Console->run();
+    }
 
    
    

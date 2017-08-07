@@ -5,6 +5,7 @@
 #include "Gameobject.h"
 #include "StateManager.h"
 #include "Trasnsform.h"
+#include "ConsoleManager.h"
 #include <string>
 #include <Windows.h>
 #include <vector>
