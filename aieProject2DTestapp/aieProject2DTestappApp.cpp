@@ -8,7 +8,8 @@
 
 
 #define OBJECTTRANSFORM m_Gameobject.Transform2D
-
+#define CORRECTST StateManager::States::CORRECT
+#define INCORRECTST StateManager::States::INCORRECT
 
 aieProject2DTestappApp::aieProject2DTestappApp() {}
 
@@ -63,7 +64,7 @@ void aieProject2DTestappApp::update(float deltaTime) {
     {
         m_currentState = m_stateManager->getState();
     }
-    if (m_currentState->ID == StateManager::States::CORRECT || m_currentState->ID == StateManager::States::INCORRECT)
+    if (m_currentState->ID == CORRECTST || m_currentState->ID == INCORRECTST)
     {
         //spin forever
         m_currentState->OBJECTTRANSFORM.rotate(3 * deltaTime);
@@ -75,11 +76,22 @@ void aieProject2DTestappApp::update(float deltaTime) {
     
     if (m_currentState->ID == StateManager::States::PLAY)
     {
-        //get the console manager struct out
-        //check that each vaue is tru in turn
-        //if the 1st is false immediatley break out
-        //if both are true set state to correct
-        //if first is true and second is false set to incorrect
+        if (m_Console->console.gotResult)
+        {
+            if (m_Console->console.consoleResult == true)
+            {
+                m_stateManager->setState(CORRECTST);
+            }
+            else
+            {
+                m_stateManager->setState(INCORRECTST);
+            }
+        }
+        else
+        {
+
+        }
+        
     }
 
    
