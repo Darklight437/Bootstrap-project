@@ -75,7 +75,11 @@ void aieProject2DTestappApp::update(float deltaTime) {
     
     if (m_currentState->ID == StateManager::States::PLAY)
     {
-        m_Console->run();
+        //get the console manager struct out
+        //check that each vaue is tru in turn
+        //if the 1st is false immediatley break out
+        //if both are true set state to correct
+        //if first is true and second is false set to incorrect
     }
 
    
