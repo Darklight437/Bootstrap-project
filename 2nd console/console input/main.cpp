@@ -127,7 +127,7 @@ bool gameloopQuestionnaire()
     case 1:
     {
         std::cout << "\nheyy everything is working as intended right main screen?\n";
-        *((LPDWORD)g_pSharedMemory) = true;
+        *((bool*)g_pSharedMemory) = true;
         return true;
     }
 
@@ -136,7 +136,7 @@ bool gameloopQuestionnaire()
     default:
     {
         std::cout << "\nWhy? this probably broke something!\n";
-        *((LPDWORD)g_pSharedMemory) = false;
+        *((bool*)g_pSharedMemory) = false;
         return true;
     }
 }

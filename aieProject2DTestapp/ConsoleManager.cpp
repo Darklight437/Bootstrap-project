@@ -145,7 +145,7 @@ ConsoleManager::consoleResults ConsoleManager::run()
             if (getMutexOwnership())
             {
                 console.gotResult = true;
-                console.consoleResult = (bool) g_pSharedMemory;
+                console.consoleResult = *((bool*) g_pSharedMemory);
                 releaseMutexOwnership();
                 return console;
                 

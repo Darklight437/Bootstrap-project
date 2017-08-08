@@ -82,13 +82,11 @@ void aieProject2DTestappApp::update(float deltaTime)
     }
 
 
-    
+    m_Console->run();
 
 
     if (m_currentState->ID == StateManager::States::PLAY)
     {
-
-        m_Console->run();
 
         if (m_Console->console.gotResult)
         {
@@ -96,7 +94,7 @@ void aieProject2DTestappApp::update(float deltaTime)
             {
                 m_stateManager->setState(CORRECTST);
             }
-            else
+            else if(m_Console->console.consoleResult == false)
             {
                 m_stateManager->setState(INCORRECTST);
             }

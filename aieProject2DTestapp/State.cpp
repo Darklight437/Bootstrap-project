@@ -6,6 +6,7 @@ State::State()
 {
     correctSprite = new aie::Texture((getExecutableFolder() + "/textures/YES.png").c_str());
     inCorrectSprite = new aie::Texture((getExecutableFolder() + "/textures/NO.png").c_str());
+    welcomeSprite = new aie::Texture((getExecutableFolder() + "/textures/Youkoso1.png").c_str());
 }
 
 
