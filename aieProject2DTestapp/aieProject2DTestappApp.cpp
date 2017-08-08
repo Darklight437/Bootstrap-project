@@ -10,6 +10,10 @@
 #define OBJECTTRANSFORM m_Gameobject.Transform2D
 #define CORRECTST StateManager::States::CORRECT
 #define INCORRECTST StateManager::States::INCORRECT
+#define STARTST StateManager::States::START
+#define PLAYST StateManager::States::PLAY
+
+
 
 aieProject2DTestappApp::aieProject2DTestappApp() {}
 
@@ -55,7 +59,7 @@ void aieProject2DTestappApp::update(float deltaTime)
 {
 
     
-	// input example
+	// input setup
 	aie::Input* input = aie::Input::getInstance();
 
 
@@ -63,20 +67,29 @@ void aieProject2DTestappApp::update(float deltaTime)
     {
         m_currentState = m_stateManager->getState();
     }
+
+    //spin the sprite for correct and incorrect
     if (m_currentState->ID == CORRECTST || m_currentState->ID == INCORRECTST)
     {
         //spin forever
         m_currentState->OBJECTTRANSFORM.rotate(3 * deltaTime);
     }
-    if (input->isKeyDown(aie::INPUT_KEY_ENTER) && m_currentState->ID == StateManager::States::START)
+
+    //press enter to start
+    if (input->isKeyDown(aie::INPUT_KEY_ENTER) && m_currentState->ID == STARTST)
     {
-        m_stateManager->setState(StateManager::States::PLAY);
+        m_stateManager->setState(PLAYST);
     }
+
+
     
 
 
     if (m_currentState->ID == StateManager::States::PLAY)
     {
+
+        m_Console->run();
+
         if (m_Console->console.gotResult)
         {
             if (m_Console->console.consoleResult == true)

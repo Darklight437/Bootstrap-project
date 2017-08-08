@@ -116,9 +116,6 @@ void releaseSharedMemory()
 bool gameloopQuestionnaire()
 {
     int input;
-    std::cout << "=======================================================\n";
-    std::cout << "WELCOME TO THE WONDEROUS QUESTIONNAIRE!\n";
-    std::cout << "=======================================================\n\n";
 
 
     std::cout << "answer 1 to prove the game isnt broken. \nOr don't i'm just a console not a cop\n\n";
@@ -138,9 +135,9 @@ bool gameloopQuestionnaire()
 
     default:
     {
-        std::cout << "\ninvalid input this probably broke something\n";
+        std::cout << "\nWhy? this probably broke something!\n";
         *((LPDWORD)g_pSharedMemory) = false;
-        return false;
+        return true;
     }
 }
 
@@ -155,6 +152,12 @@ int main()
 
     try
     {
+
+
+        std::cout << "=======================================================\n";
+        std::cout << "WELCOME TO THE WONDEROUS QUESTIONNAIRE!\n";
+        std::cout << "=======================================================\n\n";
+
 
         //other process will poll for mutex when it recieves it it will read a shared memory block that has one bool
         //the bool will setermine if the awnser was correct or not
@@ -171,7 +174,7 @@ int main()
 
 
 
-        }
+        }// /while
 
 
 
