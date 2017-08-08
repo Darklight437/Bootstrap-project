@@ -7,6 +7,7 @@ State::State()
     correctSprite = new aie::Texture((getExecutableFolder() + "/textures/YES.png").c_str());
     inCorrectSprite = new aie::Texture((getExecutableFolder() + "/textures/NO.png").c_str());
     welcomeSprite = new aie::Texture((getExecutableFolder() + "/textures/Youkoso1.png").c_str());
+    startupSprite = new aie::Texture((getExecutableFolder() + "/textures/press_enter.png").c_str());
 }
 
 
@@ -14,6 +15,8 @@ State::~State()
 {
     delete correctSprite;
     delete inCorrectSprite;
+    delete welcomeSprite;
+    delete startupSprite;
 }
 
 std::string State::getExecutableFolder() const

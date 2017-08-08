@@ -25,5 +25,6 @@ protected:
     aie::Texture* correctSprite;
     aie::Texture* inCorrectSprite;
     aie::Texture* welcomeSprite;
+    aie::Texture* startupSprite;
 };
 
